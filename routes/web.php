@@ -18,3 +18,16 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('/', 'AuthController@loginPage')->name('guest.login.page');
     Route::post('/login', 'AuthController@login')->name('guest.login');
 });
+
+Route::group(['middleware' => ['auth']], function () {
+    //logout
+    Route::get('logout', 'AuthController@logout')->name('logout');
+});
+
+Route::group(['middleware' => ['admin']], function () {
+
+});
+
+Route::group(['middleware' => ['operator']], function () {
+
+});
