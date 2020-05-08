@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['guest']], function () {
+    //only guests can access these routes
+    Route::get('/', 'AuthController@loginPage')->name('guest.login.page');
+    Route::post('/login', 'AuthController@login')->name('guest.login');
 });
