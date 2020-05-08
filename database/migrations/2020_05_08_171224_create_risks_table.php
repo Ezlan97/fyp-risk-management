@@ -15,6 +15,18 @@ class CreateRisksTable extends Migration
     {
         Schema::create('risks', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->string('cause_description');
+            $table->string('effect_description');
+            $table->string('effect_rate');
+            $table->string('file');
+            $table->string('occurrence');
+            $table->string('manageability');
+            $table->string('dependencies');
+            $table->string('proximities');
+            $table->string('user_id');
+            $table->string('status');
             $table->timestamps();
         });
     }

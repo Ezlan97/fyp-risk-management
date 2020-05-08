@@ -15,6 +15,11 @@ class CreateStrategiesTable extends Migration
     {
         Schema::create('strategies', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->string('effect_rate');
+            $table->string('risk_id');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }
