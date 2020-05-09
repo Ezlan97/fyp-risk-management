@@ -7,7 +7,7 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-    @if (Auth::user()->level == 1)
+    @if (Auth::user()->isAdmin())
       @include('components.sidebar.admin')
     @else
       @include('components.sidebar.operator')
