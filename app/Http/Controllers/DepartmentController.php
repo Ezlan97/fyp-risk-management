@@ -9,7 +9,9 @@ class DepartmentController extends Controller
 {
     public function manage()
     {
-        return view('departments.admin.index');
+        $departments = Department::all();
+
+        return view('departments.admin.index', compact('departments'));
     }
 
     public function create(Request $request)
@@ -31,6 +33,6 @@ class DepartmentController extends Controller
 
         $department->update($request->all());
 
-        return redirect()->back()->with('success', 'Jabatan telah dikemaskini!');
+        return redirect()->back()->with('success', 'Maklumat jabatan telah dikemaskini!');
     }
 }
