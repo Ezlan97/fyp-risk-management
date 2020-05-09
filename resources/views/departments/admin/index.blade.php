@@ -22,31 +22,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('admin.create.deparment') }}" class="form-signin" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('admin.create.department') }}" class="form-signin" enctype="multipart/form-data">
                     @csrf                    
                     
                     {{-- Name --}}
                     <div class="form-group">
-                        <label for="inputName" class="sr-only">Name</label>
-                        <input type="text" id="inputName" name="name" class="form-control" placeholder="Name Penuh" required autofocus>
-                    </div>
-                    
-                    {{-- Email --}}
-                    <div class="form-group">
-                        <label for="inputEmail" class="sr-only">Email</label>
-                        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required autofocus>
-                    </div>
-                    
-                    {{-- Phone Number --}}
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="phone_number" placeholder="No Telefon" pattern="^(01)[0-46-9]*-[0-9]{7,8}$" required>
-                        <p class="text-muted">Contoh : 012-34567890</p>
-                    </div>
-                    
-                    {{-- ic --}}
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="ic" placeholder="No IC" pattern="(([[0-9]{2})(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01]))-([0-9]{2})-([0-9]{4})" required>
-                        <p class="text-muted">Contoh : 901234-04-5678</p>
+                        <label for="inputName" class="sr-only">Name Jabatan</label>
+                        <input type="text" id="inputName" name="name" class="form-control" placeholder="Name Jabatan" required autofocus>
                     </div>
                     
                 </div>
