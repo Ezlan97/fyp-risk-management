@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class OperatorController extends Controller
 {
-    //
+    public function manage()
+    {
+        return view('operators.admin.index');
+    }
 }

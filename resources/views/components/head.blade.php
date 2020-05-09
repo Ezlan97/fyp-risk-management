@@ -13,6 +13,6 @@
   
     <!-- Custom styles for this template-->
     {{-- <link rel="stylesheet" href="css/admin/app.css"> --}}
-    <link href="{{ asset('/css/admin/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/sb-admin-2.min.css') }}" rel="stylesheet">
   
   </head>

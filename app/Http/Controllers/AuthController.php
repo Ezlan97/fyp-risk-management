@@ -41,7 +41,7 @@ class AuthController extends Controller
            } else {
                
                 //------------- branch operator -----------
-                return redirect()->route('branch.operator.dashboard');
+                return redirect()->route('operator.dashboard');
 
             }
         } else {

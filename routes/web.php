@@ -25,9 +25,23 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::group(['middleware' => ['admin']], function () {
+    //dashboard
+    Route::get('/admin-dashboard', 'DashboardController@adminDashboard')->name('admin.dashboard');
+
+    //department
+    Route::get('/admin-dashboard/manage-department', 'DepartmentController@manage')->name('admin.manage.department');
+
+    //operator
+    Route::get('/admin-dashboard/manage-operator', 'OperatorController@manage')->name('admin.manage.operator');
+
+    //risiko
+    Route::get('/admin-dashboard/manage-risk', 'RiskController@manage')->name('admin.manage.risk');
 
 });
 
 Route::group(['middleware' => ['operator']], function () {
-
+    //dashboard
+    Route::get('/operator/dashboard', 'DashboardController@operatorDashboard')->name('operator.dashboard');
+    
+    //risiko
 });
