@@ -10,4 +10,9 @@ class DepartmentController extends Controller
     {
         return view('departments.admin.index');
     }
+
+    public function create()
+    {
+        
+    }
 }

@@ -30,6 +30,7 @@ Route::group(['middleware' => ['admin']], function () {
 
     //department
     Route::get('/admin-dashboard/manage-department', 'DepartmentController@manage')->name('admin.manage.department');
+    Route::post('/admin-dashboard/manage-department/create', 'DepartmentController@create')->name('admin.create.department');
 
     //operator
     Route::get('/admin-dashboard/manage-operator', 'OperatorController@manage')->name('admin.manage.operator');
