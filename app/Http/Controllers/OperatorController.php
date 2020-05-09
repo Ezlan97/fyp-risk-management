@@ -44,4 +44,17 @@ class OperatorController extends Controller
 
         return redirect()->back()->with('success', 'Operator baru telah ditambah!');
     }
+
+    public function update(Request $request, User $operator)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'department_id' => 'required|integer'
+        ]);
+
+        $operator->update($request->all());
+
+        return redirect()->back()->with('success', 'Maklumat operator telah dikemaskini!');
+    }
 }
