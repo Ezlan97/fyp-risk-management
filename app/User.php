@@ -60,4 +60,15 @@ class User extends Authenticatable
             return false;
         }
     }
+
+    public function scopeAdmin($query)
+    {
+        return $query->where('level', 1)->get();
+    }
+
+    public function scopeOperator($query)
+    {
+        return $query->where('level', 2)->get();
+    }
+
 }

@@ -35,6 +35,8 @@ Route::group(['middleware' => ['admin']], function () {
 
     //operator
     Route::get('/admin-dashboard/manage-operator', 'OperatorController@manage')->name('admin.manage.operator');
+    Route::post('/admin-dashboard/manage-operator/create', 'OperatorController@create')->name('admin.create.operator');
+    Route::patch('/admin-dashboard/manage-operator/update/{operator}', 'OperatorController@update')->name('admin.update.operator');
 
     //risiko
     Route::get('/admin-dashboard/manage-risk', 'RiskController@manage')->name('admin.manage.risk');
