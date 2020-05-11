@@ -71,4 +71,8 @@ class User extends Authenticatable
         return $query->where('level', 2)->get();
     }
 
+    public function department()
+    {
+        return $this->belongsTo('App\Department');
+    }
 }

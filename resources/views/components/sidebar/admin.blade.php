@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.dashboard') }}">
         <div class="sidebar-brand-icon">
-            <img class="mb-6" src="{{ asset('images/logo.png') }}" alt="" width="45" height="50">
+            <img class="mb-6" src="{{ asset('images/logo.png') }}" alt="" width="45" height="55">
         </div>
         <div class="sidebar-brand-text mx-3">Admin</div>   
     </a>

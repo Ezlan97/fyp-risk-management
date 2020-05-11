@@ -29,7 +29,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin-dashboard', 'DashboardController@adminDashboard')->name('admin.dashboard');
 
     //department
-    Route::get('/admin-dashboard/manage-department', 'DepartmentController@manage')->name('admin.manage.department');
+    Route::get('/admin-dashboard/manage-department', 'DepartmentController@adminManage')->name('admin.manage.department');
     Route::post('/admin-dashboard/manage-department/create', 'DepartmentController@create')->name('admin.create.department');
     Route::patch('/admin-dashboard/manage-department/update/{department}', 'DepartmentController@update')->name('admin.update.department');
 
@@ -45,7 +45,11 @@ Route::group(['middleware' => ['admin']], function () {
 
 Route::group(['middleware' => ['operator']], function () {
     //dashboard
-    Route::get('/operator/dashboard', 'DashboardController@operatorDashboard')->name('operator.dashboard');
+    Route::get('/operator-dashboard', 'DashboardController@operatorDashboard')->name('operator.dashboard');
     
     //risiko
+    Route::get('/operator-dashboard/manage-risk', 'RiskController@operatorManage')->name('operator.manage.risk');
+    Route::get('/operator-dashboard/manage-risk/create-page', 'RiskController@createPage')->name('operator.create.page.risk');
+    Route::post('/operator-dashboard/manage-risk/create', 'RiskController@create')->name('operator.create.risk');
+    Route::patch('/operator-dashboard/manage-risk/draft', 'RiskController@draft')->name('operator.draft.risk');
 });

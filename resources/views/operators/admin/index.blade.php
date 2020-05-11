@@ -32,7 +32,7 @@
                     <tr>
                         <td>{{ $o->name }}</td>
                         <td>{{ $o->email }}</td>
-                        <td></td>
+                        <td>{{ $o->department->name }}</td>
                         <td>
                             <h5><span class="badge badge-{{ $o->status == 'Aktif' ? 'success' : 'danger' }}">{{ $o->status }}</span></h5>
                         </td>
