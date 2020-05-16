@@ -15,17 +15,17 @@ class CreateRisksTable extends Migration
     {
         Schema::create('risks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->string('description');
-            $table->string('cause_description');
-            $table->string('effect_description');
-            $table->string('effect_rate');
-            $table->string('file');
-            $table->string('occurrence');
-            $table->string('manageability');
-            $table->string('dependencies');
-            $table->string('proximities');
-            $table->string('Urgency');
+            $table->string('cause_description')->nullable();
+            $table->string('effect_description')->nullable();
+            $table->string('effect_rate')->nullable();
+            $table->string('file')->nullable();
+            $table->string('occurrence')->nullable();
+            $table->string('manageability')->nullable();
+            $table->string('dependencies')->nullable();
+            $table->string('proximities')->nullable();
+            $table->string('Urgency')->nullable();
             $table->string('user_id');
             $table->string('status');
             $table->timestamps();
