@@ -16,18 +16,22 @@ class RiskController extends Controller
         return view('risks.operator.index');
     }
 
-    public function draft()
-    {
-
-    }
-
     public function createPage()
     {
         return view('risks.operator.create-page');
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        switch ($request->input('action'))
+        {
+            case 'save':
+                
+                break;
 
+            case 'draft':
+
+                break;
+        }
     }
 }

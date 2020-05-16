@@ -6,14 +6,18 @@
     <h1 class="h3 mb-0 text-gray-800">Tambah Risiko</h1>
 </div>
 
-<div class="card-deck">
+<div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Maklumat Risiko</h6>
         </div>
-        <div class="card-body text-center">
+        <div class="card-body container">
             <form method="POST" action="{{ route('admin.create.operator') }}" class="form-signin" enctype="multipart/form-data">
                 @csrf
+                
+                <br>
+                <h2>Tentang</h2>
+                <br>
                 
                 {{-- Name --}}
                 <div class="form-group">
@@ -44,126 +48,158 @@
                     <input type="file" class="form-control" name="evidence" placeholder="Fail yang berkenaan" value="{{ old('evidence') }}" required>
                     <p class="text-muted">Jika fail melebihi satu sila zip kepada satu fail</p>
                 </div>
-                
-            </div>
-        </div>
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Penilian Risiko</h6>
-            </div>
-            <div class="card-body text-center">
-                
-                <div class="form-group">
-                    <p class="font-weight-bold">Penilaian</p>           
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 1
-                        </label>
+                <br>
+                <h2>Penilian</h2>
+                <br>
+                <div class="container">
+                    <div class="form-group text-center">
+                        <p class="font-weight-bold">Kadar kekerapan</p>
+                        <p>Kekerapan berlakunya risiko ini</p>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Selalu
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Berkemungkinan
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Jarang
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sangat Jarang
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Bergantung
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 2
-                        </label>
+                    <hr>
+                    <div class="form-group text-center">
+                        <p class="font-weight-bold">Tahap kebolehurusan</p>
+                        <p>Seberapa mudah untuk risiko itu ditangani</p>           
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sangat Mudah
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Mudah
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sederhana
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Susah
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sangat Susah
+                            </label>
+                        </div> 
                     </div>
-                    <div class="form-check-inline disabled">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio" disabled>Option 3
-                        </label>
+                    <hr>
+                    <div class="form-group text-center">
+                        <p class="font-weight-bold">Kebergantungan</p>
+                        <p>Adakah ia akan mengikuti atau mencetuskan peristiwa lain</p>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sangat Tinggi
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Tinggi
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sederhana
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sedikit
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Tiada
+                            </label>
+                        </div> 
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <p class="font-weight-bold">Penilaian</p>                
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 1
-                        </label>
+                    <hr>
+                    <div class="form-group text-center">
+                        <p class="font-weight-bold">Keselamatan Pekerja</p>
+                        <p>Tahap keselamatan pekerja ketika risiko berlaku</p>           
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sangat Merbahaya
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Berbahaya
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sederhana
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sedikit
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Tiada
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 2
-                        </label>
-                    </div>
-                    <div class="form-check-inline disabled">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio" disabled>Option 3
-                        </label>
-                    </div> 
-                </div>
-                
-                <div class="form-group">
-                    <p class="font-weight-bold">Penilaian</p>                
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 1
-                        </label>
-                    </div>
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 2
-                        </label>
-                    </div>
-                    <div class="form-check-inline disabled">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio" disabled>Option 3
-                        </label>
-                    </div> 
-                </div>
-                
-                <div class="form-group">
-                    <p class="font-weight-bold">Penilaian</p>                
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 1
-                        </label>
-                    </div>
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 2
-                        </label>
-                    </div>
-                    <div class="form-check-inline disabled">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio" disabled>Option 3
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <p class="font-weight-bold">Penilaian</p> 
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 1
-                        </label>
-                    </div>
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 2
-                        </label>
-                    </div>
-                    <div class="form-check-inline disabled">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio" disabled>Option 3
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <p class="font-weight-bold">Penilaian</p>                
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 1
-                        </label>
-                    </div>
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Option 2
-                        </label>
-                    </div>
-                    <div class="form-check-inline disabled">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio" disabled>Option 3
-                        </label>
+                    <hr>
+                    <div class="form-group text-center">
+                        <p class="font-weight-bold">Segera</p>
+                        <p>Berapa cepat perlu risiko ini perlu ditangani</p>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Segera
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Secepat Mungkin
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Sederhana
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Bila-bila masa
+                            </label>
+                        </div>
+                        <div class="form-check-inline disabled">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Bila perlu
+                            </label>
+                        </div>
                     </div>
                 </div>
                 
@@ -179,10 +215,12 @@
                     <span class="icon text-white">
                         <i class="fas fa-plus fa-sm text-white"></i>
                     </span>
-                    <span class="text">Simpan</span>                                
+                    <span class="text">Hantar</span>                                
                 </a>
             </div>
         </form>
+        
+        
     </div>
 </div>
 

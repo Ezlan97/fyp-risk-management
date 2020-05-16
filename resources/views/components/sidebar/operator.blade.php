@@ -14,14 +14,14 @@
 
     <!-- Heading -->
     <div class="sidebar-heading mt-3">
-      Risk
+      Risiko
     </div>
 
     <!-- Manage Penerima -->
     <li class="nav-item {{ Route::current()->getName() == 'operator.manage.risk' ? 'active' : '' }}"">
       <a class="nav-link" href="{{ route('operator.manage.risk') }}">
         <i class="fas fa-exclamation-circle"></i>
-        <span>Urus Risk</span></a>
+        <span>Urus Risiko</span></a>
     </li>
 
     <!-- Divider -->

@@ -25,6 +25,7 @@ class CreateRisksTable extends Migration
             $table->string('manageability');
             $table->string('dependencies');
             $table->string('proximities');
+            $table->string('Urgency');
             $table->string('user_id');
             $table->string('status');
             $table->timestamps();
