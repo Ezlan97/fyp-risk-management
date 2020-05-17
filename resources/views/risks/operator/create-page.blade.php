@@ -57,27 +57,27 @@
                         <p>Kekerapan berlakunya risiko ini</p>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="5" name="occurance">Selalu
+                                <input type="radio" class="form-check-input" value="5" name="occurrence">Selalu
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="4" name="occurance">Berkemungkinan
+                                <input type="radio" class="form-check-input" value="4" name="occurrence">Berkemungkinan
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="3" name="occurance">Jarang
+                                <input type="radio" class="form-check-input" value="3" name="occurrence">Jarang
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="2" name="occurance">Sangat Jarang
+                                <input type="radio" class="form-check-input" value="2" name="occurrence">Sangat Jarang
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="1" name="occurance">Bergantung
+                                <input type="radio" class="form-check-input" value="1" name="occurrence">Bergantung
                             </label>
                         </div>
                     </div>
@@ -211,7 +211,7 @@
                     </span>
                     <span class="text">Draf</span>                                
                 </button>
-                <button type="submit" name="action" value="save" class="d-sm-inline-block btn btn-sm btn-warning shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
+                <button type="submit" name="action" value="save" class="d-sm-inline-block btn btn-sm btn-success shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
                         <i class="fas fa-plus fa-sm text-white"></i>
                     </span>

@@ -57,27 +57,27 @@
                         <p>Kekerapan berlakunya risiko ini</p>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="5" name="occurance">Selalu
+                                <input type="radio" class="form-check-input" {{ $risk->occurrence == '5' ? 'checked' : '' }} value="5" name="occurrence">Selalu
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="4" name="occurance">Berkemungkinan
+                                <input type="radio" class="form-check-input" {{ $risk->occurrence == '4' ? 'checked' : '' }} value="4" name="occurrence">Berkemungkinan
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="3" name="occurance">Jarang
+                                <input type="radio" class="form-check-input" {{ $risk->occurrence == '3' ? 'checked' : '' }} value="3" name="occurrence">Jarang
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="2" name="occurance">Sangat Jarang
+                                <input type="radio" class="form-check-input" {{ $risk->occurrence == '2' ? 'checked' : '' }} value="2" name="occurrence">Sangat Jarang
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="1" name="occurance">Bergantung
+                                <input type="radio" class="form-check-input" {{ $risk->occurrence == '1' ? 'checked' : '' }} value="1" name="occurrence">Bergantung
                             </label>
                         </div>
                     </div>
@@ -92,22 +92,22 @@
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->manageability == '5' ? 'checked' : '' }} value="4" name="manageability">Mudah
+                                <input type="radio" class="form-check-input" {{ $risk->manageability == '4' ? 'checked' : '' }} value="4" name="manageability">Mudah
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->manageability == '5' ? 'checked' : '' }} value="3" name="manageability">Sederhana
+                                <input type="radio" class="form-check-input" {{ $risk->manageability == '3' ? 'checked' : '' }} value="3" name="manageability">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->manageability == '5' ? 'checked' : '' }} value="2" name="manageability">Susah
+                                <input type="radio" class="form-check-input" {{ $risk->manageability == '2' ? 'checked' : '' }} value="2" name="manageability">Susah
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->manageability == '5' ? 'checked' : '' }} value="1" name="manageability">Sangat Susah
+                                <input type="radio" class="form-check-input" {{ $risk->manageability == '1' ? 'checked' : '' }} value="1" name="manageability">Sangat Susah
                             </label>
                         </div> 
                     </div>
@@ -122,22 +122,22 @@
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="4" name="dependecies">Tinggi
+                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '4' ? 'checked' : '' }} value="4" name="dependecies">Tinggi
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="3" name="dependecies">Sederhana
+                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '3' ? 'checked' : '' }} value="3" name="dependecies">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="2" name="dependecies">Sedikit
+                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '2' ? 'checked' : '' }} value="2" name="dependecies">Sedikit
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="1" name="dependecies">Tiada
+                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '1' ? 'checked' : '' }} value="1" name="dependecies">Tiada
                             </label>
                         </div> 
                     </div>
@@ -152,22 +152,22 @@
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->proximities == '5' ? 'checked' : '' }} value="4" name="proximities">Berbahaya
+                                <input type="radio" class="form-check-input" {{ $risk->proximities == '4' ? 'checked' : '' }} value="4" name="proximities">Berbahaya
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->proximities == '5' ? 'checked' : '' }} value="3" name="proximities">Sederhana
+                                <input type="radio" class="form-check-input" {{ $risk->proximities == '3' ? 'checked' : '' }} value="3" name="proximities">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->proximities == '5' ? 'checked' : '' }} value="2" name="proximities">Sedikit
+                                <input type="radio" class="form-check-input" {{ $risk->proximities == '2' ? 'checked' : '' }} value="2" name="proximities">Sedikit
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->proximities == '5' ? 'checked' : '' }} value="1" name="proximities">Tiada
+                                <input type="radio" class="form-check-input" {{ $risk->proximities == '1' ? 'checked' : '' }} value="1" name="proximities">Tiada
                             </label>
                         </div>
                     </div>
@@ -182,36 +182,37 @@
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->urgency == '5' ? 'checked' : '' }} value="4" name="urgency">Secepat Mungkin
+                                <input type="radio" class="form-check-input" {{ $risk->urgency == '4' ? 'checked' : '' }} value="4" name="urgency">Secepat Mungkin
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->urgency == '5' ? 'checked' : '' }} value="3" name="urgency">Sederhana
+                                <input type="radio" class="form-check-input" {{ $risk->urgency == '3' ? 'checked' : '' }} value="3" name="urgency">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->urgency == '5' ? 'checked' : '' }} value="2" name="urgency">Bila-bila masa
+                                <input type="radio" class="form-check-input" {{ $risk->urgency == '2' ? 'checked' : '' }} value="2" name="urgency">Bila-bila masa
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->urgency == '5' ? 'checked' : '' }} value="1" name="urgency">Bila perlu
+                                <input type="radio" class="form-check-input" {{ $risk->urgency == '1' ? 'checked' : '' }} value="1" name="urgency">Bila perlu
                             </label>
                         </div>
                     </div>
                 </div>
                 
             </div>
+            <input type="hidden" value="{{ $risk->id }}" name="id">
             <div class="card-footer text-center">
-                <button type="submit" name="action" value="draft" class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
+                <button type="submit" name="action" value="update" class="d-sm-inline-block btn btn-sm btn-warning shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
                         <i class="fas fa-plus fa-sm text-white"></i>
                     </span>
-                    <span class="text">Draf</span>                                
+                    <span class="text">Kemaskini</span>                                
                 </button>
-                <button type="submit" name="action" value="save" class="d-sm-inline-block btn btn-sm btn-warning shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
+                <button type="submit" name="action" value="save" class="d-sm-inline-block btn btn-sm btn-success shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
                         <i class="fas fa-plus fa-sm text-white"></i>
                     </span>

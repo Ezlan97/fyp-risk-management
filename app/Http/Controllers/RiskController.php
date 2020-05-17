@@ -37,7 +37,7 @@ class RiskController extends Controller
                     'cause_description' =>  'required',
                     'effect_description' =>  'required',
                     'file' =>  'required',
-                    'occurance' =>  'required',
+                    'occurrence' =>  'required',
                     'manageability' =>  'required',
                     'dependecies' =>  'required',
                     'urgency' => 'required',
@@ -67,9 +67,9 @@ class RiskController extends Controller
                 {
                     $draft->effect_description = $request->effect_description;
                 }
-                if($request->has('occurance'))
+                if($request->has('occurrence'))
                 {
-                    $draft->occurance = $request->occurance;
+                    $draft->occurrence = $request->occurrence;
                 }
                 if($request->has('manageability'))
                 {
@@ -85,7 +85,7 @@ class RiskController extends Controller
                 } 
                 if($request->has('proximities'))
                 {
-                    $draft->urgency_rate = $request->proximities;
+                    $draft->proximities = $request->proximities;
                 }                
                 if ($request->hasFile('file')) {
                     // Get filename with the extension
@@ -107,6 +107,70 @@ class RiskController extends Controller
 
                 return redirect()->route('operator.manage.risk')->with('success', 'Risiko telah disimpan sebagai draf.');                
 
+                break;
+            
+            case 'update':
+                
+                $request->validate([
+                    'id' => 'required'
+                ]);
+
+                $update = Risk::find($request->id);
+                if($request->has('title'))
+                {
+                    $update->title = $request->title;
+                }
+                if($request->has('description'))
+                {
+                    $update->description = $request->description;
+                }
+                if($request->has('cause_description'))
+                {
+                    $update->cause_description = $request->cause_description;
+                }
+                if($request->has('effect_description'))
+                {
+                    $update->effect_description = $request->effect_description;
+                }
+                if($request->has('occurrence'))
+                {
+                    $update->occurrence = $request->occurrence;
+                }
+                if($request->has('manageability'))
+                {
+                    $update->manageability = $request->manageability;
+                }
+                if($request->has('dependencies'))
+                {
+                    $update->dependencies = $request->dependencies;
+                }
+                if($request->has('urgency'))
+                {
+                    $update->urgency = $request->urgency;
+                } 
+                if($request->has('proximities'))
+                {
+                    $update->proximities = $request->proximities;
+                }                
+                if ($request->hasFile('file')) {
+                    // Get filename with the extension
+                    $filenameWithExt = $request->file('file')->getClientOriginalName();
+                    //Get just filename
+                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                    // Get just ext
+                    $extension = $request->file('file')->getClientOriginalExtension();
+                    // Filename to store
+                    $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                    // Upload Image
+                    $path = $request->file('file')->storeAs('public/files',$fileNameToStore);
+                    //initiate
+                    $update->file = 'app\public\files\\' . $fileNameToStore;
+                }
+                $update->user_id = Auth::user()->id;
+                $update->status = 'Draf';
+                $update->save();
+
+                return redirect()->route('operator.manage.risk')->with('success', 'Risiko telah disimpan sebagai draf.');
                 break;
         }
     }

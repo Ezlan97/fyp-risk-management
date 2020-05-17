@@ -55,7 +55,7 @@
                             </button>
                         </td>
                         <td>
-                            <a href="{{ Route('operator.update.risk', $r->id) }}" class="btn btn-warning btn-icon-split"  data-toggle="tooltip" data-placement="top" title="Kemaskini Maklumat Risiko">
+                            <a href="{{ Route('operator.update.page.risk', $r->id) }}" class="btn btn-warning btn-icon-split"  data-toggle="tooltip" data-placement="top" title="Kemaskini Maklumat Risiko">
                                 <span class="icon text-white">
                                     <i class="fas fa-edit"></i>
                                     Kemaskini
@@ -111,27 +111,27 @@
                                             <p>Kekerapan berlakunya risiko ini</p>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurance == '5' ? 'checked' : '' }} value="5" name="occurance">Selalu
+                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '5' ? 'checked="true"' : '' }}>Selalu
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurance == '4' ? 'checked' : '' }} value="4" name="occurance">Berkemungkinan
+                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '4' ? 'checked="true"' : '' }}>Berkemungkinan
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurance == '3' ? 'checked' : '' }} value="3" name="occurance">Jarang
+                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '3' ? 'checked="true"' : '' }}>Jarang
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurance == '2' ? 'checked' : '' }} value="2" name="occurance">Sangat Jarang
+                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '2' ? 'checked="true"' : '' }}>Sangat Jarang
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurance == '1' ? 'checked' : '' }} value="1" name="occurance">Bergantung
+                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '1' ? 'checked="true"' : '' }}>Bergantung
                                                 </label>
                                             </div>
                                         </div>
@@ -141,27 +141,27 @@
                                             <p>Seberapa mudah untuk risiko itu ditangani</p>           
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '5' ? 'checked' : '' }} value="5" name="manageability">Sangat Mudah
+                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '5' ? 'checked="true"' : '' }}>Sangat Mudah
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '4' ? 'checked' : '' }} value="4" name="manageability">Mudah
+                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '4' ? 'checked="true"' : '' }}>Mudah
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '3' ? 'checked' : '' }} value="3" name="manageability">Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '2' ? 'checked' : '' }} value="2" name="manageability">Susah
+                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '2' ? 'checked="true"' : '' }}>Susah
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '1' ? 'checked' : '' }} value="1" name="manageability">Sangat Susah
+                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '1' ? 'checked="true"' : '' }}>Sangat Susah
                                                 </label>
                                             </div> 
                                         </div>
@@ -171,27 +171,27 @@
                                             <p>Adakah ia akan mengikuti atau mencetuskan peristiwa lain</p>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '5' ? 'checked' : '' }} value="5" name="dependecies">Sangat Tinggi
+                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '5' ? 'checked="true"' : '' }}>Sangat Tinggi
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '4' ? 'checked' : '' }} value="4" name="dependecies">Tinggi
+                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '4' ? 'checked="true"' : '' }}>Tinggi
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '3' ? 'checked' : '' }} value="3" name="dependecies">Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '2' ? 'checked' : '' }} value="2" name="dependecies">Sedikit
+                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '2' ? 'checked="true"' : '' }}>Sedikit
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '1' ? 'checked' : '' }} value="1" name="dependecies">Tiada
+                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '1' ? 'checked="true"' : '' }}>Tiada
                                                 </label>
                                             </div> 
                                         </div>
@@ -201,27 +201,27 @@
                                             <p>Tahap keselamatan pekerja ketika risiko berlaku</p>           
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '5' ? 'checked' : '' }} value="5" name="proximities">Sangat Merbahaya
+                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '5' ? 'checked="true"' : '' }}>Sangat Merbahaya
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '4' ? 'checked' : '' }} value="4" name="proximities">Berbahaya
+                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '4' ? 'checked="true"' : '' }}>Berbahaya
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '3' ? 'checked' : '' }} value="3" name="proximities">Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '2' ? 'checked' : '' }} value="2" name="proximities">Sedikit
+                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '2' ? 'checked="true"' : '' }}>Sedikit
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '1' ? 'checked' : '' }} value="1" name="proximities">Tiada
+                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '1' ? 'checked="true"' : '' }}>Tiada
                                                 </label>
                                             </div>
                                         </div>
@@ -231,27 +231,27 @@
                                             <p>Berapa cepat perlu risiko ini perlu ditangani</p>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '5' ? 'checked' : '' }} value="5" name="urgency">Segera
+                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '5' ? 'checked="true"' : '' }}>Segera
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '4' ? 'checked' : '' }} value="4" name="urgency">Secepat Mungkin
+                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '4' ? 'checked="true"' : '' }}>Secepat Mungkin
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '3' ? 'checked' : '' }} value="3" name="urgency">Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '2' ? 'checked' : '' }} value="2" name="urgency">Bila-bila masa
+                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '2' ? 'checked="true"' : '' }}>Bila-bila masa
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '1' ? 'checked' : '' }} value="1" name="urgency">Bila perlu
+                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '1' ? 'checked="true"' : '' }}>Bila perlu
                                                 </label>
                                             </div>
                                         </div>
