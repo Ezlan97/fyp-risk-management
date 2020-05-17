@@ -22,30 +22,30 @@
                 {{-- Name --}}
                 <div class="form-group">
                     <label for="inputName" class="sr-only">Tajuk</label>
-                    <input type="text" name="title" class="form-control" placeholder="Tajuk" value="{{ old('title') }}" required autofocus>
+                    <input type="text" name="title" class="form-control" placeholder="Tajuk" value="{{ $risk->title }}" required autofocus>
                 </div>
                 
                 {{-- Risk Detail --}}
                 <div class="form-group">
                     <label for="inputDetail" class="sr-only">Perincian Risiko</label>
-                    <textarea name="description" class="form-control" placeholder="Perincian Risiko" required>{{ old('description') }}</textarea>
+                    <textarea name="description" class="form-control" placeholder="Perincian Risiko" required>{{ $risk->description }}</textarea>
                 </div>
                 
                 {{-- Couse Detail --}}
                 <div class="form-group">
                     <label for="inputDetail" class="sr-only">Perincian Punca Risiko</label>
-                    <textarea name="cause_description" class="form-control" placeholder="Perincian Punca Risiko">{{ old('cause_description') }}</textarea>
+                    <textarea name="cause_description" class="form-control" placeholder="Perincian Punca Risiko">{{ $risk->cause_description }}</textarea>
                 </div>
                 
                 {{-- Effect Detail --}}
                 <div class="form-group">
                     <label for="inputDetail" class="sr-only">Perincian Kesan Risiko</label>
-                    <textarea name="effect_description" class="form-control" placeholder="Perincian Kesan Risiko">{{ old('effect_description') }}</textarea>
+                    <textarea name="effect_description" class="form-control" placeholder="Perincian Kesan Risiko">{{ $risk->effect_description }}</textarea>
                 </div>
                 
                 <div class="form-group">
                     <label>Fail Berkaitan</label>
-                    <input type="file" class="form-control" name="file" placeholder="Fail yang berkenaan" value="{{ old('file') }}">
+                    <input type="file" class="form-control" name="file" placeholder="Fail yang berkenaan" value="{{ $risk->file }}">
                     <p class="text-muted">Jika fail melebihi satu sila zip kepada satu fail</p>
                 </div>
                 <br>
@@ -57,27 +57,27 @@
                         <p>Kekerapan berlakunya risiko ini</p>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="5" name="occurance">Selalu
+                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="5" name="occurance">Selalu
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="4" name="occurance">Berkemungkinan
+                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="4" name="occurance">Berkemungkinan
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="3" name="occurance">Jarang
+                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="3" name="occurance">Jarang
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="2" name="occurance">Sangat Jarang
+                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="2" name="occurance">Sangat Jarang
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="1" name="occurance">Bergantung
+                                <input type="radio" class="form-check-input" {{ $risk->occurance == '5' ? 'checked' : '' }} value="1" name="occurance">Bergantung
                             </label>
                         </div>
                     </div>
@@ -87,27 +87,27 @@
                         <p>Seberapa mudah untuk risiko itu ditangani</p>           
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="5" name="manageability">Sangat Mudah
+                                <input type="radio" class="form-check-input" {{ $risk->manageability == '5' ? 'checked' : '' }} value="5" name="manageability">Sangat Mudah
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="4" name="manageability">Mudah
+                                <input type="radio" class="form-check-input" {{ $risk->manageability == '5' ? 'checked' : '' }} value="4" name="manageability">Mudah
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="3" name="manageability">Sederhana
+                                <input type="radio" class="form-check-input" {{ $risk->manageability == '5' ? 'checked' : '' }} value="3" name="manageability">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="2" name="manageability">Susah
+                                <input type="radio" class="form-check-input" {{ $risk->manageability == '5' ? 'checked' : '' }} value="2" name="manageability">Susah
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="1" name="manageability">Sangat Susah
+                                <input type="radio" class="form-check-input" {{ $risk->manageability == '5' ? 'checked' : '' }} value="1" name="manageability">Sangat Susah
                             </label>
                         </div> 
                     </div>
@@ -117,27 +117,27 @@
                         <p>Adakah ia akan mengikuti atau mencetuskan peristiwa lain</p>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="5" name="dependecies">Sangat Tinggi
+                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="5" name="dependecies">Sangat Tinggi
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="4" name="dependecies">Tinggi
+                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="4" name="dependecies">Tinggi
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="3" name="dependecies">Sederhana
+                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="3" name="dependecies">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="2" name="dependecies">Sedikit
+                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="2" name="dependecies">Sedikit
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="1" name="dependecies">Tiada
+                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="1" name="dependecies">Tiada
                             </label>
                         </div> 
                     </div>
@@ -147,27 +147,27 @@
                         <p>Tahap keselamatan pekerja ketika risiko berlaku</p>           
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="5" name="proximities">Sangat Merbahaya
+                                <input type="radio" class="form-check-input" {{ $risk->proximities == '5' ? 'checked' : '' }} value="5" name="proximities">Sangat Merbahaya
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="4" name="proximities">Berbahaya
+                                <input type="radio" class="form-check-input" {{ $risk->proximities == '5' ? 'checked' : '' }} value="4" name="proximities">Berbahaya
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="3" name="proximities">Sederhana
+                                <input type="radio" class="form-check-input" {{ $risk->proximities == '5' ? 'checked' : '' }} value="3" name="proximities">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="2" name="proximities">Sedikit
+                                <input type="radio" class="form-check-input" {{ $risk->proximities == '5' ? 'checked' : '' }} value="2" name="proximities">Sedikit
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="1" name="proximities">Tiada
+                                <input type="radio" class="form-check-input" {{ $risk->proximities == '5' ? 'checked' : '' }} value="1" name="proximities">Tiada
                             </label>
                         </div>
                     </div>
@@ -177,27 +177,27 @@
                         <p>Berapa cepat perlu risiko ini perlu ditangani</p>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="5" name="urgency">Segera
+                                <input type="radio" class="form-check-input" {{ $risk->urgency == '5' ? 'checked' : '' }} value="5" name="urgency">Segera
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="4" name="urgency">Secepat Mungkin
+                                <input type="radio" class="form-check-input" {{ $risk->urgency == '5' ? 'checked' : '' }} value="4" name="urgency">Secepat Mungkin
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="3" name="urgency">Sederhana
+                                <input type="radio" class="form-check-input" {{ $risk->urgency == '5' ? 'checked' : '' }} value="3" name="urgency">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="2" name="urgency">Bila-bila masa
+                                <input type="radio" class="form-check-input" {{ $risk->urgency == '5' ? 'checked' : '' }} value="2" name="urgency">Bila-bila masa
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="1" name="urgency">Bila perlu
+                                <input type="radio" class="form-check-input" {{ $risk->urgency == '5' ? 'checked' : '' }} value="1" name="urgency">Bila perlu
                             </label>
                         </div>
                     </div>

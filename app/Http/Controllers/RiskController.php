@@ -16,7 +16,9 @@ class RiskController extends Controller
 
     public function operatorManage()
     {
-        return view('risks.operator.index');
+        $risks = Risk::Owner()->get();
+
+        return view('risks.operator.index', compact('risks'));
     }
 
     public function createPage()
@@ -35,10 +37,11 @@ class RiskController extends Controller
                     'cause_description' =>  'required',
                     'effect_description' =>  'required',
                     'file' =>  'required',
-                    'occurance_rate' =>  'required',
-                    'manageability_rate' =>  'required',
-                    'dependecies_rate' =>  'required',
-                    'urgency_rate' => 'required'
+                    'occurance' =>  'required',
+                    'manageability' =>  'required',
+                    'dependecies' =>  'required',
+                    'urgency' => 'required',
+                    'proximities' => 'required'
                 ]);
 
                 return 'passed';
@@ -64,21 +67,25 @@ class RiskController extends Controller
                 {
                     $draft->effect_description = $request->effect_description;
                 }
-                if($request->has('occurance_rate'))
+                if($request->has('occurance'))
                 {
-                    $draft->occurance_rate = $request->occurance_rate;
+                    $draft->occurance = $request->occurance;
                 }
-                if($request->has('manageability_rate'))
+                if($request->has('manageability'))
                 {
-                    $draft->manageability_rate = $request->manageability_rate;
+                    $draft->manageability = $request->manageability;
                 }
-                if($request->has('dependencies_rate'))
+                if($request->has('dependencies'))
                 {
-                    $draft->dependencies_rate = $request->dependencies_rate;
+                    $draft->dependencies = $request->dependencies;
                 }
-                if($request->has('urgency_rate'))
+                if($request->has('urgency'))
                 {
-                    $draft->urgency_rate = $request->urgency_rate;
+                    $draft->urgency = $request->urgency;
+                } 
+                if($request->has('proximities'))
+                {
+                    $draft->urgency_rate = $request->proximities;
                 }                
                 if ($request->hasFile('file')) {
                     // Get filename with the extension
@@ -102,5 +109,10 @@ class RiskController extends Controller
 
                 break;
         }
+    }
+
+    public function updatePage(Risk $risk)
+    {
+        return view('risks.operator.update-page', compact('risk'));
     }
 }
