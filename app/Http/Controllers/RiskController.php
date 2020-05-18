@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
+use App\Mail\MaklumatRisikoBaru;
 use Illuminate\Http\Request;
+use App\User;
 use App\Risk;
 use Auth;
 
@@ -78,6 +80,18 @@ class RiskController extends Controller
                 $submit->user_id = Auth::user()->id;
                 $submit->status = 'Menunggu Kelulusan';
                 $submit->save();
+
+                $details = [
+                    'title' => 'Maklumat Risiko Baru',
+                    'body' => 'Risiko baru telah dikesan oleh operator, sila log masuk dan semak.',
+                    'tajuk' => $submit->title,
+                    'penerangan' => $submit->description,
+                    'oleh' => Auth::user()->name
+                ];
+
+                $email = User::admin()->first()->email;
+        
+                \Mail::to($email)->send(new MaklumatRisikoBaru($details));
 
                 return redirect()->route('operator.manage.risk')->with('success', 'Maklumat risiko telah dihantar kepada admin untuk semakan.');                
 
