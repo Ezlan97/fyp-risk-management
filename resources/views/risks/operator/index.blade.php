@@ -36,6 +36,8 @@
                         <td>
                             @if ($r->status == 'Draf')
                             <h5><span class="badge badge-secondary">{{ $r->status }}</span></h5>
+                            @elseif($r->status == 'Menunggu Kelulusan')
+                            <h5><span class="badge badge-warning">{{ $r->status }}</span></h5>
                             @endif
                         </td>
                         <td class="text-center">

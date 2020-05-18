@@ -117,27 +117,27 @@
                         <p>Adakah ia akan mengikuti atau mencetuskan peristiwa lain</p>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '5' ? 'checked' : '' }} value="5" name="dependecies">Sangat Tinggi
+                                <input type="radio" class="form-check-input" {{ $risk->dependencies == '5' ? 'checked' : '' }} value="5" name="dependencies">Sangat Tinggi
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '4' ? 'checked' : '' }} value="4" name="dependecies">Tinggi
+                                <input type="radio" class="form-check-input" {{ $risk->dependencies == '4' ? 'checked' : '' }} value="4" name="dependencies">Tinggi
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '3' ? 'checked' : '' }} value="3" name="dependecies">Sederhana
+                                <input type="radio" class="form-check-input" {{ $risk->dependencies == '3' ? 'checked' : '' }} value="3" name="dependencies">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '2' ? 'checked' : '' }} value="2" name="dependecies">Sedikit
+                                <input type="radio" class="form-check-input" {{ $risk->dependencies == '2' ? 'checked' : '' }} value="2" name="dependencies">Sedikit
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" {{ $risk->dependecies == '1' ? 'checked' : '' }} value="1" name="dependecies">Tiada
+                                <input type="radio" class="form-check-input" {{ $risk->dependencies == '1' ? 'checked' : '' }} value="1" name="dependencies">Tiada
                             </label>
                         </div> 
                     </div>
@@ -206,13 +206,13 @@
             </div>
             <input type="hidden" value="{{ $risk->id }}" name="id">
             <div class="card-footer text-center">
-                <button type="submit" name="action" value="update" class="d-sm-inline-block btn btn-sm btn-warning shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
+                <button type="submit" name="action" value="update$draft" class="d-sm-inline-block btn btn-sm btn-warning shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
                         <i class="fas fa-plus fa-sm text-white"></i>
                     </span>
                     <span class="text">Kemaskini</span>                                
                 </button>
-                <button type="submit" name="action" value="save" class="d-sm-inline-block btn btn-sm btn-success shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
+                <button type="submit" name="action" value="update&submit" class="d-sm-inline-block btn btn-sm btn-success shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
                         <i class="fas fa-plus fa-sm text-white"></i>
                     </span>

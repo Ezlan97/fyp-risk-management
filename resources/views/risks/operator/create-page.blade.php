@@ -117,27 +117,27 @@
                         <p>Adakah ia akan mengikuti atau mencetuskan peristiwa lain</p>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="5" name="dependecies">Sangat Tinggi
+                                <input type="radio" class="form-check-input" value="5" name="dependencies">Sangat Tinggi
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="4" name="dependecies">Tinggi
+                                <input type="radio" class="form-check-input" value="4" name="dependencies">Tinggi
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="3" name="dependecies">Sederhana
+                                <input type="radio" class="form-check-input" value="3" name="dependencies">Sederhana
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="2" name="dependecies">Sedikit
+                                <input type="radio" class="form-check-input" value="2" name="dependencies">Sedikit
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="1" name="dependecies">Tiada
+                                <input type="radio" class="form-check-input" value="1" name="dependencies">Tiada
                             </label>
                         </div> 
                     </div>
@@ -205,13 +205,13 @@
                 
             </div>
             <div class="card-footer text-center">
-                <button type="submit" name="action" value="draft" class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
+                <button type="submit" name="save&draft" value="draft" class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
                         <i class="fas fa-plus fa-sm text-white"></i>
                     </span>
                     <span class="text">Draf</span>                                
                 </button>
-                <button type="submit" name="action" value="save" class="d-sm-inline-block btn btn-sm btn-success shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
+                <button type="submit" name="save&submit" value="save" class="d-sm-inline-block btn btn-sm btn-success shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
                         <i class="fas fa-plus fa-sm text-white"></i>
                     </span>
