@@ -39,12 +39,40 @@ class RiskController extends Controller
                     'file' =>  'required',
                     'occurrence' =>  'required',
                     'manageability' =>  'required',
-                    'dependecies' =>  'required',
+                    'dependencies' =>  'required',
                     'urgency' => 'required',
                     'proximities' => 'required'
                 ]);
 
-                return 'passed';
+                $save = new Risk();
+                $save->title = $request->title;            
+                $save->description = $request->description;            
+                $save->cause_description = $request->cause_description;            
+                $save->effect_description = $request->effect_description;            
+                $save->occurrence = $request->occurrence;            
+                $save->manageability = $request->manageability;            
+                $save->dependencies = $request->dependencies;            
+                $save->urgency = $request->urgency;                
+                $save->proximities = $request->proximities;                
+                if ($request->hasFile('file')) {
+                    // Get filename with the extension
+                    $filenameWithExt = $request->file('file')->getClientOriginalName();
+                    //Get just filename
+                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                    // Get just ext
+                    $extension = $request->file('file')->getClientOriginalExtension();
+                    // Filename to store
+                    $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                    // Upload Image
+                    $path = $request->file('file')->storeAs('public/files',$fileNameToStore);
+                    //initiate
+                    $save->file = 'app\public\files\\' . $fileNameToStore;
+                }
+                $save->user_id = Auth::user()->id;
+                $save->status = 'Menunggu Kelulusan';
+                $save->save();
+
+                return redirect()->route('operator.manage.risk')->with('success', 'Risiko telah disimpan sebagai draf.');
 
                 break;
 
@@ -170,7 +198,7 @@ class RiskController extends Controller
                 $update->status = 'Draf';
                 $update->save();
 
-                return redirect()->route('operator.manage.risk')->with('success', 'Risiko telah disimpan sebagai draf.');
+                return redirect()->route('operator.manage.risk')->with('success', 'Draf risiko telah dikemaskini.');
                 break;
         }
     }

@@ -38,7 +38,7 @@
                             <h5><span class="badge badge-secondary">{{ $r->status }}</span></h5>
                             @endif
                         </td>
-                        <td>
+                        <td class="text-center">
                             <button class="d-sm-inline-block btn btn-primary btn-icon-split shadow-sm" data-toggle="modal" data-target="#perincianRisiko{{ $r->id }}"  data-toggle="tooltip" data-placement="top" title="Perincian Berkenaan Risiko">
                                 <span class="icon text-white">
                                     <i class="fas fa-eye"></i>
@@ -46,7 +46,7 @@
                                 </span>
                             </button>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <button class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#penilianRisiko{{ $r->id }}"  data-toggle="tooltip" data-placement="top" title="Penilian Risiko Risiko">
                                 <span class="icon text-white">
                                     <i class="fas fa-eye"></i>
@@ -54,7 +54,7 @@
                                 </span>
                             </button>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="{{ Route('operator.update.page.risk', $r->id) }}" class="btn btn-warning btn-icon-split"  data-toggle="tooltip" data-placement="top" title="Kemaskini Maklumat Risiko">
                                 <span class="icon text-white">
                                     <i class="fas fa-edit"></i>
