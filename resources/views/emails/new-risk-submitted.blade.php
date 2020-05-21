@@ -242,8 +242,7 @@
                                             <br> 
                                                 </p>
                                                     Oleh : {{ $details['oleh'] }}
-                                                <p>
-                                            
+                                                <p>                                            
                                         </div>
                                     </td>
                                 </tr>

@@ -11,9 +11,10 @@ use Auth;
 
 class RiskController extends Controller
 {
-    public function adminManage()
+    public function adminManage($status)
     {
-        return view('risks.admin.index');
+        $risks = Risk::where('status', $status)->orderBy('updated_at', 'DESC')->get();
+        return view('risks.admin.index', compact('risks', 'status'));
     }
 
     public function operatorManage()
@@ -26,6 +27,11 @@ class RiskController extends Controller
     public function createPage()
     {
         return view('risks.operator.create-page');
+    }
+
+    public function updatePage(Risk $risk)
+    {
+        return view('risks.operator.update-page', compact('risk'));
     }
 
     public function create(Request $request)
@@ -168,9 +174,9 @@ class RiskController extends Controller
             return redirect()->route('operator.manage.risk')->with('success', 'Draf risiko telah dikemaskini.');
         }
     }
-
-    public function updatePage(Risk $risk)
+    
+    public function download(Risk $risk)
     {
-        return view('risks.operator.update-page', compact('risk'));
+        return response()->download(storage_path($risk->file));
     }
 }

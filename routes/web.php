@@ -39,7 +39,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::patch('/admin-dashboard/manage-operator/update/{operator}', 'OperatorController@update')->name('admin.update.operator');
 
     //risiko
-    Route::get('/admin-dashboard/manage-risk', 'RiskController@adminManage')->name('admin.manage.risk');
+    Route::get('/admin-dashboard/manage-risk/{status}', 'RiskController@adminManage')->name('admin.manage.risk');
+    Route::get('/admin-dashboard/manage-risk/download-evidence/{risk}', 'RiskController@download')->name('admin.download.evidence.risk');
 
 });
 
