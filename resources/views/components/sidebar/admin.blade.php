@@ -55,12 +55,12 @@
     </li> --}}
     
     <!-- Urus Risiko -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRisk" aria-expanded="true" aria-controls="collapseRisk">
+    <li class="nav-item {{ Route::current()->getName() == 'admin.manage.risk' ? 'active' : '' }}">
+        <a class="nav-link {{ Route::current()->getName() == 'admin.manage.risk' ? '' : 'collapsed' }}" href="#" data-toggle="collapse" data-target="#collapseRisk" aria-expanded="true" aria-controls="collapseRisk">
             <i class="fas fa-fw fa-exclamation-circle"></i>
             <span>Risiko</span>
         </a>
-        <div id="collapseRisk" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseRisk" class="collapse {{ Route::current()->getName() == 'admin.manage.risk' ? 'show' : '' }}" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Status :</h6>
                 <a class="collapse-item" href="{{ route('admin.manage.risk', 'Menunggu Kelulusan') }}">Menunggu Kelulusan</a>

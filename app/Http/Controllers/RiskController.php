@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\MaklumatRisikoBaru;
 use Illuminate\Http\Request;
+use App\Comment;
 use App\User;
 use App\Risk;
 use Auth;
@@ -173,6 +174,25 @@ class RiskController extends Controller
 
             return redirect()->route('operator.manage.risk')->with('success', 'Draf risiko telah dikemaskini.');
         }
+    }
+
+    public function update(Risk $risk, Request $request)
+    {        
+        $request->validate([
+            'comment' => 'required',
+            'status' => 'required'
+        ]);
+        
+        $risk->status = $request->status;
+        $risk->save();
+
+        $comment = new Comment();
+        $comment->user_id = Auth::user()->id;
+        $comment->comment = $request->comment;
+        $comment->risk_id = $risk->id;
+        $comment->save();
+            
+        return redirect()->back()->with('success', 'Comment dan status risiko telah disimpan dan dihantar!');
     }
     
     public function download(Risk $risk)

@@ -11,4 +11,9 @@ class Risk extends Model
     {
         return $query->where('user_id', Auth::user()->id);
     }
+
+    public function comment()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

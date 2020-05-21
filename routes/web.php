@@ -40,6 +40,7 @@ Route::group(['middleware' => ['admin']], function () {
 
     //risiko
     Route::get('/admin-dashboard/manage-risk/{status}', 'RiskController@adminManage')->name('admin.manage.risk');
+    Route::post('/admin-dashboard/manage-risk/update/{risk}', 'RiskController@update')->name('admin.update.risk');
     Route::get('/admin-dashboard/manage-risk/download-evidence/{risk}', 'RiskController@download')->name('admin.download.evidence.risk');
 
 });
