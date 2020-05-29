@@ -327,7 +327,7 @@
                     
                     {{-- komen risiko --}}
                     <div class="modal fade" id="komenRisiko{{ $r->id }}" tabindex="-1" role="dialog" aria-labelledby="komenRisiko{{ $r->id }}Label" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-dialog-scrollable">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="komenRisiko{{ $r->id }}Label">Komen Risiko</h5>
