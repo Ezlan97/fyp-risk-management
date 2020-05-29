@@ -54,4 +54,5 @@ Route::group(['middleware' => ['operator']], function () {
     Route::get('/operator-dashboard/manage-risk/create-page', 'RiskController@createPage')->name('operator.create.page.risk');
     Route::post('/operator-dashboard/manage-risk/create', 'RiskController@create')->name('operator.create.risk');
     Route::get('/operator-dashboard/manage-risk/update-page/{risk}', 'RiskController@updatePage')->name('operator.update.page.risk');
+    Route::post('/operator-dashboard/manage-risk/comment/{risk}', 'RiskController@update')->name('operator.comment.risk');
 });

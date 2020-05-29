@@ -17,6 +17,7 @@
                     <tr>
                         <th>Tajuk</th>
                         <th>Penerangan</th>
+                        <th>Tarikh & Masa</th>
                         <th></th>
                         <th>Status</th>
                         <th>Perincian</th>
@@ -30,6 +31,7 @@
                     <tr>
                         <td>{{ $r->title }}</td>
                         <td>{{ $r->description }}</td>
+                        <td>{{ $r->created_at }}</td>
                         <td>
                             <a class="btn btn-success btn-icon-split" href="{{ route('admin.download.evidence.risk', $r->id) }}" data-toggle="tooltip" data-placement="top" title="Muat Turun Fail Berkaitan Risiko">
                                 <span class="icon text-white">
@@ -193,27 +195,27 @@
                                             <p>Adakah ia akan mengikuti atau mencetuskan peristiwa lain</p>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '5' ? 'checked="true"' : '' }}>Sangat Tinggi
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '5' ? 'checked="true"' : '' }}>Sangat Tinggi
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '4' ? 'checked="true"' : '' }}>Tinggi
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '4' ? 'checked="true"' : '' }}>Tinggi
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '3' ? 'checked="true"' : '' }}>Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '2' ? 'checked="true"' : '' }}>Sedikit
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '2' ? 'checked="true"' : '' }}>Sedikit
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '1' ? 'checked="true"' : '' }}>Tiada
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '1' ? 'checked="true"' : '' }}>Tiada
                                                 </label>
                                             </div> 
                                         </div>
@@ -335,24 +337,27 @@
                                 </div>
                                 <div class="modal-body">                                    
                                     @foreach ($r->comment as $c)
-                                        @if ($c->user_id == Auth::user()->id)
-                                            <div class="card border-success float-right" style="max-width: 18rem;">
-                                                <div class="card-body text-success">
-                                                    <h5 class="card-title">Admin</h5>
-                                                    <hr>
-                                                    <p class="card-text">{{ $c->comment }}</p>
-                                                    <hr>
-                                                    <p class="text-muted">{{ $c->created_at }}</p>
-                                                </div>
-                                            </div>
-                                        @else
-                                            <div class="card border-primary mb-3" style="max-width: 18rem;">
-                                                <div class="card-body text-primary">
-                                                    <h5 class="card-title">Success card title</h5>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                </div>
-                                            </div>                                    
-                                        @endif
+                                    @if ($c->user_id == Auth::user()->id)
+                                    <div class="card border-success float-right mb-2" style="max-width: 18rem;">
+                                        <div class="card-body text-success">
+                                            <h5 class="card-title">{{ Auth::user()->name }}</h5>
+                                            <hr>
+                                            <p class="card-text">{{ $c->comment }}</p>
+                                            <hr>
+                                            <p class="text-muted">{{ $c->created_at }}</p>
+                                        </div>
+                                    </div>
+                                    @else
+                                    <div class="card border-primary float-left mb-2" style="max-width: 18rem;">
+                                        <div class="card-body text-primary">
+                                            <h5 class="card-title">Admin</h5>
+                                            <hr>
+                                            <p class="card-text">{{ $c->comment }}</p>
+                                            <hr>
+                                            <p class="text-muted">{{ $c->created_at }}</p>
+                                        </div>
+                                    </div>                                    
+                                    @endif
                                     @endforeach
                                 </div>
                                 <div class="modal-footer">

@@ -22,6 +22,7 @@
                     <tr>
                         <th>Tajuk</th>
                         <th>Penerangan</th>
+                        <th>Tarikh & Masa</th>
                         <th>Status</th>
                         <th>Perincian</th>
                         <th>Penilian</th>
@@ -34,6 +35,7 @@
                     <tr>
                         <td>{{ $r->title }}</td>
                         <td>{{ $r->description }}</td>
+                        <td>{{ $r->created_at }}</td>
                         <td>
                             @if ($r->status == 'Draf')
                             <h5><span class="badge badge-secondary">{{ $r->status }}</span></h5>
@@ -182,27 +184,27 @@
                                             <p>Adakah ia akan mengikuti atau mencetuskan peristiwa lain</p>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '5' ? 'checked="true"' : '' }}>Sangat Tinggi
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '5' ? 'checked="true"' : '' }}>Sangat Tinggi
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '4' ? 'checked="true"' : '' }}>Tinggi
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '4' ? 'checked="true"' : '' }}>Tinggi
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '3' ? 'checked="true"' : '' }}>Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '2' ? 'checked="true"' : '' }}>Sedikit
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '2' ? 'checked="true"' : '' }}>Sedikit
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependecies == '1' ? 'checked="true"' : '' }}>Tiada
+                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '1' ? 'checked="true"' : '' }}>Tiada
                                                 </label>
                                             </div> 
                                         </div>
@@ -274,7 +276,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     {{-- komen risiko --}}
                     <div class="modal fade" id="komenRisiko{{ $r->id }}" tabindex="-1" role="dialog" aria-labelledby="komenRisiko{{ $r->id }}Label" aria-hidden="true">
                         <div class="modal-dialog">
@@ -287,33 +289,41 @@
                                 </div>
                                 <div class="modal-body">
                                     @if ($r->comment->count() == 0)
-                                        <h5>Admin tidak memberikan sebarang komen...</h5>
+                                    <h5>Admin tidak memberikan sebarang komen...</h5>
                                     @else
                                     @foreach ($r->comment as $c)
                                     @if ($c->user_id == Auth::user()->id)
-                                        <div class="card border-success float-right" style="max-width: 18rem;">
-                                            <div class="card-body text-success">
-                                                <h5 class="card-title">Admin</h5>
-                                                <hr>
-                                                <p class="card-text">{{ $c->comment }}</p>
-                                                <hr>
-                                                <p class="text-muted">{{ $c->created_at }}</p>
-                                            </div>
+                                    <div class="card border-success float-right mb-2" style="max-width: 18rem;">
+                                        <div class="card-body text-success">
+                                            <h5 class="card-title">{{ Auth::user()->name }}</h5>
+                                            <hr>
+                                            <p class="card-text">{{ $c->comment }}</p>
+                                            <hr>
+                                            <p class="text-muted">{{ $c->created_at }}</p>
                                         </div>
+                                    </div>
                                     @else
-                                        <div class="card border-primary mb-3" style="max-width: 18rem;">
-                                            <div class="card-body text-primary">
-                                                <h5 class="card-title">Success card title</h5>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            </div>
-                                        </div>                                    
+                                    <div class="card border-primary float-left mb-2" style="max-width: 18rem;">
+                                        <div class="card-body text-primary">
+                                            <h5 class="card-title">Admin</h5>
+                                            <hr>
+                                            <p class="card-text">{{ $c->comment }}</p>
+                                            <hr>
+                                            <p class="text-muted">{{ $c->created_at }}</p>
+                                        </div>
+                                    </div>                                    
                                     @endif
-                                @endforeach
+                                    @endforeach
                                     @endif                                                                 
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                </div>
+                                <form method="POST" action="{{ route('operator.comment.risk', $r->id) }}" class="form-signin" enctype="multipart/form-data">
+                                    @csrf
+                                    <textarea class="form-control" name="comment" id="" cols="20" rows="3" placeholder="Balas komen admin.."></textarea>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                        <button type="submit" class="btn btn-success">Hantar</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

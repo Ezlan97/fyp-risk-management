@@ -177,14 +177,21 @@ class RiskController extends Controller
     }
 
     public function update(Risk $risk, Request $request)
-    {        
+    {   
+        if($request->has('status'))
+        {            
+            $request->validate([
+                'comment' => 'required',
+                'status' => 'required'
+            ]);
+                
+            $risk->status = $request->status;
+            $risk->save();
+        }
+
         $request->validate([
-            'comment' => 'required',
-            'status' => 'required'
+            'comment' => 'required'
         ]);
-        
-        $risk->status = $request->status;
-        $risk->save();
 
         $comment = new Comment();
         $comment->user_id = Auth::user()->id;
