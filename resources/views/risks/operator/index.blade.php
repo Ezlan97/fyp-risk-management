@@ -293,7 +293,7 @@
                                     @else
                                     @foreach ($r->comment as $c)
                                     @if ($c->user_id == Auth::user()->id)
-                                    <div class="card border-success float-right mb-2" style="max-width: 18rem;">
+                                    <div class="card border-success float-right mb-2" style="width: 18rem;">
                                         <div class="card-body text-success">
                                             <h5 class="card-title">{{ Auth::user()->name }}</h5>
                                             <hr>
@@ -303,7 +303,7 @@
                                         </div>
                                     </div>
                                     @else
-                                    <div class="card border-primary float-left mb-2" style="max-width: 18rem;">
+                                    <div class="card border-primary float-left mb-2" style="width: 18rem;">
                                         <div class="card-body text-primary">
                                             <h5 class="card-title">Admin</h5>
                                             <hr>
