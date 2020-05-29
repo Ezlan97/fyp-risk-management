@@ -104,17 +104,17 @@ class RiskController extends Controller
 
         }
         else
-        {
-            $request->validate([
-                'id' => 'required'
-            ]);
-
+        {            
             if($request->action == 'save&draft')
             {                
                 $submit = new Risk();
             }
             else
             {
+                $request->validate([
+                    'id' => 'required'
+                ]);
+                
                 $submit = Risk::find($request->id);
             }
 

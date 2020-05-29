@@ -40,9 +40,12 @@
             <span>Urus Operator</span>
         </a>
     </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
     
     <!-- Heading -->
-    <div class="sidebar-heading mt-3">
+    <div class="sidebar-heading">
         Risiko
     </div>
     

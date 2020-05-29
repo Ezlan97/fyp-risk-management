@@ -205,15 +205,15 @@
                 
             </div>
             <div class="card-footer text-center">
-                <button type="submit" name="save&draft" value="draft" class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
+                <button type="submit" name="action" value="save&draft" class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
-                        <i class="fas fa-plus fa-sm text-white"></i>
+                        <i class="fas fa-archive fa-sm text-white"></i>
                     </span>
                     <span class="text">Draf</span>                                
                 </button>
-                <button type="submit" name="save&submit" value="save" class="d-sm-inline-block btn btn-sm btn-success shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
+                <button type="submit" name="action" value="save&submit" class="d-sm-inline-block btn btn-sm btn-success shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
-                        <i class="fas fa-plus fa-sm text-white"></i>
+                        <i class="fas fa-paper-plane fa-sm text-white"></i>
                     </span>
                     <span class="text">Hantar</span>                                
                 </button>
