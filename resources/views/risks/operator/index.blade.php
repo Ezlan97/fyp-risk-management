@@ -25,6 +25,7 @@
                         <th>Status</th>
                         <th>Perincian</th>
                         <th>Penilian</th>
+                        <th>Komen</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -50,6 +51,14 @@
                         </td>
                         <td class="text-center">
                             <button class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#penilianRisiko{{ $r->id }}"  data-toggle="tooltip" data-placement="top" title="Penilian Risiko Risiko">
+                                <span class="icon text-white">
+                                    <i class="fas fa-eye"></i>
+                                    Lihat
+                                </span>
+                            </button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#komenRisiko{{ $r->id }}"  data-toggle="tooltip" data-placement="top" title="Komen risiko dan ubah status risiko">
                                 <span class="icon text-white">
                                     <i class="fas fa-eye"></i>
                                     Lihat
@@ -261,6 +270,49 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- komen risiko --}}
+                    <div class="modal fade" id="komenRisiko{{ $r->id }}" tabindex="-1" role="dialog" aria-labelledby="komenRisiko{{ $r->id }}Label" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="komenRisiko{{ $r->id }}Label">Komen Risiko</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    @if ($r->comment->count() == 0)
+                                        <h5>Admin tidak memberikan sebarang komen...</h5>
+                                    @else
+                                    @foreach ($r->comment as $c)
+                                    @if ($c->user_id == Auth::user()->id)
+                                        <div class="card border-success float-right" style="max-width: 18rem;">
+                                            <div class="card-body text-success">
+                                                <h5 class="card-title">Admin</h5>
+                                                <hr>
+                                                <p class="card-text">{{ $c->comment }}</p>
+                                                <hr>
+                                                <p class="text-muted">{{ $c->created_at }}</p>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <div class="card border-primary mb-3" style="max-width: 18rem;">
+                                            <div class="card-body text-primary">
+                                                <h5 class="card-title">Success card title</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>                                    
+                                    @endif
+                                @endforeach
+                                    @endif                                                                 
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                                 </div>
                             </div>
                         </div>
