@@ -75,4 +75,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Department');
     }
+
+    public function risk()
+    {
+        return $this->hasOne('App\Risk');
+    }
 }

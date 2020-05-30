@@ -40,7 +40,7 @@
             <span>Urus Operator</span>
         </a>
     </li>
-
+    
     <!-- Divider -->
     <hr class="sidebar-divider">
     
@@ -66,9 +66,18 @@
         <div id="collapseRisk" class="collapse {{ Route::current()->getName() == 'admin.manage.risk' ? 'show' : '' }}" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Status :</h6>
-                <a class="collapse-item" href="{{ route('admin.manage.risk', 'Menunggu Kelulusan') }}">Menunggu Kelulusan</a>
-                <a class="collapse-item" href="{{ route('admin.manage.risk', 'Lulus & Sedang Di Urus') }}">Lulus & Sedang Di Urus</a>
-                <a class="collapse-item" href="{{ route('admin.manage.risk', 'Selesai') }}">Selesai</a>
+                <a class="collapse-item" href="{{ route('admin.manage.risk', 'Menunggu Kelulusan') }}">
+                    Menunggu Kelulusan 
+                    {{-- <span class="badge badge-warning">1</span> --}}
+                </a>
+                <a class="collapse-item" href="{{ route('admin.manage.risk', 'Lulus & Sedang Di Urus') }}">
+                    Lulus & Sedang Di Urus 
+                    {{-- <span class="badge badge-primary">3</span> --}}
+                </a>
+                <a class="collapse-item" href="{{ route('admin.manage.risk', 'Selesai') }}">
+                    Selesai 
+                    {{-- <span class="badge badge-success">6</span> --}}
+                </a>
             </div>
         </div>
     </li>

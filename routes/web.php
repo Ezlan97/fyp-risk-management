@@ -40,8 +40,9 @@ Route::group(['middleware' => ['admin']], function () {
 
     //risiko
     Route::get('/admin-dashboard/manage-risk/{status}', 'RiskController@adminManage')->name('admin.manage.risk');
-    Route::post('/admin-dashboard/manage-risk/update/{risk}', 'RiskController@update')->name('admin.update.risk');
+    Route::post('/admin-dashboard/manage-risk/update/{risk}', 'RiskController@updateStatus')->name('admin.update.risk');
     Route::get('/admin-dashboard/manage-risk/download-evidence/{risk}', 'RiskController@download')->name('admin.download.evidence.risk');
+    Route::post('/admin-dashboard/manage-risk/comment/{risk}', 'RiskController@comment')->name('admin.comment.risk');
 
 });
 
@@ -54,5 +55,5 @@ Route::group(['middleware' => ['operator']], function () {
     Route::get('/operator-dashboard/manage-risk/create-page', 'RiskController@createPage')->name('operator.create.page.risk');
     Route::post('/operator-dashboard/manage-risk/create', 'RiskController@create')->name('operator.create.risk');
     Route::get('/operator-dashboard/manage-risk/update-page/{risk}', 'RiskController@updatePage')->name('operator.update.page.risk');
-    Route::post('/operator-dashboard/manage-risk/comment/{risk}', 'RiskController@update')->name('operator.comment.risk');
+    Route::post('/operator-dashboard/manage-risk/comment/{risk}', 'RiskController@comment')->name('operator.comment.risk');
 });

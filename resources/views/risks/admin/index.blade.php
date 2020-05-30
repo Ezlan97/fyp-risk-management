@@ -360,9 +360,14 @@
                                     @endif
                                     @endforeach
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                </div>
+                                <form method="POST" action="{{ route('admin.comment.risk', $r->id) }}" class="form-signin" enctype="multipart/form-data">
+                                    @csrf
+                                    <textarea class="form-control" name="comment" id="" cols="20" rows="3" placeholder="Balas komen operator.."></textarea>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                        <button type="submit" class="btn btn-success">Hantar</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

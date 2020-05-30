@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
 use App\Mail\MaklumatRisikoBaru;
+use App\Mail\KomenBaruSystemPengurusanRisiko;
 use Illuminate\Http\Request;
 use App\Comment;
 use App\User;
@@ -176,19 +177,30 @@ class RiskController extends Controller
         }
     }
 
-    public function update(Risk $risk, Request $request)
-    {   
-        if($request->has('status'))
-        {            
-            $request->validate([
-                'comment' => 'required',
-                'status' => 'required'
-            ]);
+    public function updateStatus(Risk $risk, Request $request)
+    {            
+        $request->validate([
+            'comment' => 'sometimes',
+            'status' => 'required'
+        ]);
                 
-            $risk->status = $request->status;
-            $risk->save();
-        }
+        $risk->status = $request->status;
+        $risk->save();
 
+        if($request->comment != null)
+        {
+            $comment = new Comment();
+            $comment->user_id = Auth::user()->id;
+            $comment->comment = $request->comment;
+            $comment->risk_id = $risk->id;
+            $comment->save();
+        }        
+            
+        return redirect()->back()->with('success', 'Comment dan status risiko telah disimpan dan dihantar kepada operator!');
+    }
+
+    public function comment(Risk $risk, Request $request)
+    {
         $request->validate([
             'comment' => 'required'
         ]);
@@ -198,8 +210,28 @@ class RiskController extends Controller
         $comment->comment = $request->comment;
         $comment->risk_id = $risk->id;
         $comment->save();
-            
-        return redirect()->back()->with('success', 'Comment dan status risiko telah disimpan dan dihantar!');
+        
+        $details = [
+            'title' => 'Komen Risiko',
+            'body' => 'Komen baru dari operator.',
+             'risiko' => $risk->title,
+            'penerangan' => $risk->description,
+            'comment' => $request->comment,
+            'oleh' => Auth::user()->name
+        ];
+
+        if(Auth::user()->level != 1)
+        {
+            $email = User::admin()->first()->email;
+        }
+        else
+        {
+            $email = $risk->user->email;
+        }
+
+        \Mail::to($email)->send(new KomenBaruSystemPengurusanRisiko($details));
+
+        return redirect()->back()->with('success', 'Comment telah disimpan dan dihantar!');
     }
     
     public function download(Risk $risk)
