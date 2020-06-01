@@ -44,6 +44,12 @@
                             <h5><span class="badge badge-secondary">{{ $r->status }}</span></h5>
                             @elseif($r->status == 'Menunggu Kelulusan')
                             <h5><span class="badge badge-warning">{{ $r->status }}</span></h5>
+                            @elseif($r->status == 'Perlu Pembaikan')
+                            <h5><span class="badge badge-danger">{{ $r->status }}</span></h5>
+                            @elseif($r->status == 'Lulus & Sedang Di Urus')
+                            <h5><span class="badge badge-primary">{{ $r->status }}</span></h5>
+                            @elseif($r->status == 'Selesai & Dipantau')
+                            <h5><span class="badge badge-success">{{ $r->status }}</span></h5>
                             @endif
                         </td>
                         <td class="text-center">
@@ -311,8 +317,9 @@
                                         <div class="form-group">
                                             <select id="inputStatus" class="form-control" name="status" required>                                          
                                                 <option {{ old('state') == 'Menunggu Kelulusan' ? 'selected' : '' }} value="Menunggu Kelulusan">Menunggu Kelulusan</option>
+                                                <option {{ old('state') == 'Perlu Pembaikan' ? 'selected' : '' }} value="Perlu Pembaikan">Perlu Pembaikan</option>
                                                 <option {{ old('state') == 'Lulus & Sedang Di Urus' ? 'selected' : '' }} value="Lulus & Sedang Di Urus">Lulus & Sedang Di Urus</option>
-                                                <option {{ old('state') == 'Selesai' ? 'selected' : '' }} value="Selesai">Selesai</option>
+                                                <option {{ old('state') == 'Lulus & Sedang Di Urus' ? 'selected' : '' }} value="Lulus & Sedang Di Urus">Selesai & Dipantau</option>
                                             </select>
                                         </div>
                                     </div>

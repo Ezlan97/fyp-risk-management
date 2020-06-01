@@ -21,11 +21,6 @@ class CreateRisksTable extends Migration
             $table->string('effect_description')->nullable();
             $table->string('effect_rate')->nullable();
             $table->string('file')->nullable();
-            $table->string('occurrence')->nullable();
-            $table->string('manageability')->nullable();
-            $table->string('dependencies')->nullable();
-            $table->string('proximities')->nullable();
-            $table->string('urgency')->nullable();
             $table->string('user_id');
             $table->string('status');
             $table->timestamps();

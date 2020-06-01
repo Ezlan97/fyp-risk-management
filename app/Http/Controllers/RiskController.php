@@ -214,7 +214,7 @@ class RiskController extends Controller
         $details = [
             'title' => 'Komen Risiko',
             'body' => 'Komen baru dari operator.',
-             'risiko' => $risk->title,
+            'risiko' => $risk->title,
             'penerangan' => $risk->description,
             'comment' => $request->comment,
             'oleh' => Auth::user()->name

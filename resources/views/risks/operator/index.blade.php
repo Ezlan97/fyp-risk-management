@@ -41,6 +41,12 @@
                             <h5><span class="badge badge-secondary">{{ $r->status }}</span></h5>
                             @elseif($r->status == 'Menunggu Kelulusan')
                             <h5><span class="badge badge-warning">{{ $r->status }}</span></h5>
+                            @elseif($r->status == 'Perlu Pembaikan')
+                            <h5><span class="badge badge-danger">{{ $r->status }}</span></h5>
+                            @elseif($r->status == 'Lulus & Sedang Di Urus')
+                            <h5><span class="badge badge-primary">{{ $r->status }}</span></h5>
+                            @elseif($r->status == 'Selesai & Dipantau')
+                            <h5><span class="badge badge-success">{{ $r->status }}</span></h5>
                             @endif
                         </td>
                         <td class="text-center">

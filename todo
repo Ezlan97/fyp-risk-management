@@ -1,8 +1,6 @@
 Risk management
-1. comment function for both admin and operator
-2. email for every comment send
-
-last task in work
-riskcontroller
-email admin/operator when new comment created for risk
-getting owner email from variable risk
+1. comment function for both admin and operator [Done]
+2. email for every comment send [Done]
+3. Log for every action
+4. Statistic calculation
+5. Statistic Visualization

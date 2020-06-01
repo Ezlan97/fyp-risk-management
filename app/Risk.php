@@ -21,4 +21,14 @@ class Risk extends Model
     {
         return $this->hasMany('App\Comment');
     }
+
+    public function evaluation()
+    {
+        return $this->hasMany('App\Evaluation');
+    }
+
+    public function mitigation()
+    {
+        return $this->hasMany('App\Mitigation');
+    }
 }
