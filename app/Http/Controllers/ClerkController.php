@@ -33,8 +33,17 @@ class ClerkController extends Controller
         return redirect()->back()->with('success', 'Pembantu Tadbir baru telah ditambah!');
     }
 
-    public function update()
+    public function update(User $clerk, Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone_number' => 'sometimes',
+            'status' => 'required'
+        ]);
 
+        $clerk->update($request->all());
+
+        return redirect()->back()->with('success', 'Pembantu Tadbir telah dikemaskini!');
     }
 }

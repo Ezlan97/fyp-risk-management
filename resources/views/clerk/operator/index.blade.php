@@ -13,7 +13,7 @@
 
 <div class="row row-cols-1 row-cols-md-3">
     @foreach ($clerks as $c)
-
+    
     <div class="col mb-4" style="max-width: 18rem">
         <div class="card h-100">
             <div class="card-body">
@@ -21,6 +21,66 @@
                 <hr>
                 <p class="card-text">Email : {{ $c->email }}</p>
                 <p class="card-text">No Telefon : {{ $c->phone_number }}</p>
+                <p class="card-text">Status : <span class="badge badge-{{ $c->status == 'Aktif' ? 'success' : 'danger' }}">{{ $c->status }}</span> </p>                
+            </div>
+            <div class="card-footer text-center">
+                <button class="d-sm-inline-block btn btn-sm btn-warning shadow-sm btn-icon-split" data-toggle="modal" data-target="#updateClerk{{ $c->id }}"  data-toggle="tooltip" data-placement="top" title="Tambah Pembantu Tadbir">
+                    <span class="icon text-white">
+                        <i class="fas fa-edit fa-sm text-white"></i>
+                    </span>
+                    <span class="text">Kemaskini</span>                                
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- update Modal -->
+    <div class="modal fade" id="updateClerk{{ $c->id }}" tabindex="-1" role="dialog" aria-labelledby="updateClerk{{ $c->id }}Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateClerk{{ $c->id }}Label">Kemaskini</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{{ route('operator.update.clerk', $c->id) }}" class="form-signin" enctype="multipart/form-data">
+                        @method('PATCH')
+                        @csrf                    
+                        
+                        {{-- Name --}}
+                        <div class="form-group">
+                            <label for="inputName" class="sr-only">Name Operator</label>
+                            <input type="text" name="name" class="form-control" placeholder="Name Operator" value="{{ $c->name }}" required autofocus>
+                        </div>
+                        
+                        {{-- Email --}}
+                        <div class="form-group">
+                            <label for="inputName" class="sr-only">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email" value="{{ $c->email }}" required>
+                        </div>
+                        
+                        {{-- Email --}}
+                        <div class="form-group">
+                            <label for="inputName" class="sr-only">Phone Number</label>
+                            <input type="string" name="phone_number" class="form-control" placeholder="No Telefon" value="{{ $c->phone_number }}" required>
+                        </div>
+                        
+                        {{-- status --}}
+                        <div class="form-group">
+                            <label for="status">Status operator</label>
+                            <select class="form-control" id="status" name="status">                                                
+                                <option value="Aktif" {{ $c->status == 'Aktif' ? 'selected' : '' }}>Aktif</option>
+                                <option value="Tidak Aktif" {{ $c->status == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif</option>
+                            </select>
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-success">Tambah</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -32,13 +92,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createOperatorLabel">Tambah Operator</h5>
+                <h5 class="modal-title" id="createOperatorLabel">Tambah Pembantu Tadbir</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('operator.create.clerk') }}" class="form-signin" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('operator.create.clerk') }}" class="form-signin" enctype="multipart/form-data">                    
                     @csrf                    
                     
                     {{-- Name --}}
@@ -52,7 +112,7 @@
                         <label for="inputName" class="sr-only">Email</label>
                         <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
                     </div>
-
+                    
                     {{-- Email --}}
                     <div class="form-group">
                         <label for="inputName" class="sr-only">Phone Number</label>
