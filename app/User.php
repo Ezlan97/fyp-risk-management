@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone_number'
     ];
 
     /**
@@ -61,6 +61,18 @@ class User extends Authenticatable
         }
     }
 
+    public function isClerk()
+    {
+        if ($this->level == 3)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public function scopeAdmin($query)
     {
         return $query->where('level', 1)->get();
@@ -69,6 +81,11 @@ class User extends Authenticatable
     public function scopeOperator($query)
     {
         return $query->where('level', 2)->get();
+    }
+
+    public function scopeClerk($query)
+    {
+        return $query->where('level', 3)->get();
     }
 
     public function department()

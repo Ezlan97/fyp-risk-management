@@ -56,4 +56,8 @@ Route::group(['middleware' => ['operator']], function () {
     Route::post('/operator-dashboard/manage-risk/create', 'RiskController@create')->name('operator.create.risk');
     Route::get('/operator-dashboard/manage-risk/update-page/{risk}', 'RiskController@updatePage')->name('operator.update.page.risk');
     Route::post('/operator-dashboard/manage-risk/comment/{risk}', 'RiskController@comment')->name('operator.comment.risk');
+
+    //kerani
+    Route::get('/operator-dashboard/manage-risk/clerk/', 'ClerkController@manage')->name('operator.manage.clerk');
+    Route::post('/operator-dashboard/manage-risk/clerk/create', 'ClerkController@create')->name('operator.create.clerk');
 });

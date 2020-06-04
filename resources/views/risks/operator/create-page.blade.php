@@ -17,6 +17,7 @@
                 
                 <br>
                 <h2>Tentang</h2>
+                <hr>
                 <br>
                 
                 {{-- Name --}}
@@ -49,7 +50,24 @@
                     <p class="text-muted">Jika fail melebihi satu sila zip kepada satu fail</p>
                 </div>
                 <br>
-                <h2>Penilian</h2>
+
+                <br>
+                <h2>Langkah Pencegahan</h2>
+                <hr>
+                {{-- Risk Detail --}}
+                <div class="form-group">
+                    <label for="inputDetail" class="sr-only">Penerangan Langkah Pencegahan</label>
+                    <textarea name="mitigation" class="form-control" placeholder="Penerangan Langkah Pencegahan" required>{{ old('mitigation') }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="dateline">Dateline</label>
+                    <input type="date" name="dateline" class="form-control">
+                </div>
+                <br>
+
+                <br>
+                <h2>Penilian</h2>                
+                <hr>
                 <br>
                 <div class="container">
                     <div class="form-group text-center">
