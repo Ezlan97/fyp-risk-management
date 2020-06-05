@@ -136,19 +136,19 @@
                                     {{-- mitigation detail --}}
                                     <div class="form-group">
                                         <label for="inputDetail" class="">Cara Pencegahan Yang Dicadangkan</label>
-                                        <input type="text" class="form-control" name="mitigation" value="{{ $r->mitigation->first()->mitigation }}">
+                                        <input type="text" class="form-control" name="mitigation" disabled value="{{ $r->mitigation->first()->mitigation }}">
                                     </div>
                                     
                                     {{-- dateline --}}
                                     <div class="form-group">
                                         <label for="inputDetail" class="">Masa Jangka Akan Selesai</label>
-                                        <input type="date" name="dateline" class="form-control" value="{{ $r->mitigation->first()->dateline }}">
+                                        <input type="date" name="dateline" class="form-control" disabled value="{{ $r->mitigation->first()->dateline }}">
                                     </div>
 
                                     {{-- Person in charge --}}
                                     <div class="form-group">
                                         <label for="inputDetail" class="">Yang Bertanggungjawab</label>
-                                        <input type="text" class="form-control" name="mitigation" value="{{ $r->mitigation->first()->person_in_charge->name }}">
+                                        <input type="text" class="form-control" name="mitigation" disabled value="{{ $r->mitigation->first()->person_in_charge->name }}">
                                     </div>
                                 </div>
                                 <div class="modal-footer">

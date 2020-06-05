@@ -37,7 +37,9 @@ class RiskController extends Controller
 
     public function updatePage(Risk $risk)
     {
-        return view('risks.operator.update-page', compact('risk'));
+        $clerks = User::clerk();
+
+        return view('risks.operator.update-page', compact('risk', 'clerks'));
     }
 
     public function create(Request $request)
@@ -174,8 +176,8 @@ class RiskController extends Controller
             $risk->status = 'Draf';
             $risk->save();
 
-            // update mitigation
-            $evaluation = $risk->evaluation->where('status', 'Sebelum')->first();
+            // update evaluation
+            $evaluation = $risk->evaluation->where('state', 'Sebelum')->first();
             if($request->has('occurrence'))
             {
                 $evaluation->occurrence = $request->occurrence;
