@@ -22,6 +22,7 @@
                         <th>Status</th>
                         <th>Perincian</th>
                         <th>Penilian</th>
+                        <th>Pencegahan</th>
                         <th>Komen</th>
                         <th></th>
                     </tr>
@@ -77,6 +78,14 @@
                             </a>
                         </td> --}}
                         <td class="text-center">
+                            <button class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#pencegahanRisiko{{ $r->id }}"  data-toggle="tooltip" data-placement="top" title="Langkah Pencegahan Risiko">
+                                <span class="icon text-white">
+                                    <i class="fas fa-eye"></i>
+                                    Lihat
+                                </span>
+                            </button>
+                        </td>
+                        <td class="text-center">
                             <button class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#komenRisiko{{ $r->id }}"  data-toggle="tooltip" data-placement="top" title="Komen risiko dan ubah status risiko">
                                 <span class="icon text-white">
                                     <i class="fas fa-eye"></i>
@@ -119,6 +128,42 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Pencegahan risiko --}}
+                    <div class="modal fade" id="pencegahanRisiko{{ $r->id }}" tabindex="-1" role="dialog" aria-labelledby="pencegahanRisiko{{ $r->id }}Label" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="perincianRisiko{{ $r->id }}Label">Pencegahan Risiko</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">                                    
+                                    {{-- mitigation detail --}}
+                                    <div class="form-group">
+                                        <label for="inputDetail" class="">Cara Pencegahan Yang Dicadangkan</label>
+                                        <input type="text" class="form-control" name="mitigation" disabled value="{{ $r->mitigation->first()->mitigation }}">
+                                    </div>
+                                    
+                                    {{-- dateline --}}
+                                    <div class="form-group">
+                                        <label for="inputDetail" class="">Masa Jangka Akan Selesai</label>
+                                        <input type="date" name="dateline" class="form-control" disabled value="{{ $r->mitigation->first()->dateline }}">
+                                    </div>
+
+                                    {{-- Person in charge --}}
+                                    <div class="form-group">
+                                        <label for="inputDetail" class="">Yang Bertanggungjawab</label>
+                                        <input type="text" class="form-control" name="mitigation" disabled value="{{ $r->mitigation->first()->person_in_charge->name }}">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>

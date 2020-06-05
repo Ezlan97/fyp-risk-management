@@ -173,7 +173,10 @@ class RiskController extends Controller
                 $risk->file = 'app\public\files\\' . $fileNameToStore;
             }
             $risk->user_id = Auth::user()->id;
-            $risk->status = 'Draf';
+            if($risk->status == 'Lulus & Sedang Di Urus' || $risk->status == 'Draf')
+            {
+                $risk->status = 'Draf';
+            }            
             $risk->save();
 
             // update evaluation
