@@ -59,9 +59,19 @@
                     <label for="inputDetail" class="sr-only">Penerangan Langkah Pencegahan</label>
                     <textarea name="mitigation" class="form-control" placeholder="Penerangan Langkah Pencegahan" required>{{ old('mitigation') }}</textarea>
                 </div>
-                <div class="form-group">
-                    <label for="dateline">Dateline</label>
-                    <input type="date" name="dateline" class="form-control">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="dateline">Dateline</label>
+                        <input type="date" name="dateline" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="person_in_charge" >Yang Bertanggungjawab</label>
+                        <select name="person_in_charge" id="" class="form-control">
+                            @foreach ($clerks as $c)
+                                <option value="{{ $c->id }}">{{ $c->name }}, {{ $c->email }}, {{ $c->phone_number }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 <br>
 

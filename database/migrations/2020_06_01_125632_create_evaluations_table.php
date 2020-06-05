@@ -16,7 +16,7 @@ class CreateEvaluationsTable extends Migration
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
             $table->string('risk_id');
-            $table->string('state')->default('before');
+            $table->string('state')->default('Sebelum');
             $table->string('occurrence')->nullable();
             $table->string('manageability')->nullable();
             $table->string('dependencies')->nullable();

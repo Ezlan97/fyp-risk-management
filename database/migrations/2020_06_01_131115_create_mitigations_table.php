@@ -16,9 +16,9 @@ class CreateMitigationsTable extends Migration
         Schema::create('mitigations', function (Blueprint $table) {
             $table->id();
             $table->string('risk_id');
-            $table->string('how');
-            $table->string('explanation');
-            $table->string('dateline');
+            $table->string('mitigation')->nullable();
+            $table->string('user_id');
+            $table->string('dateline')->nullable();
             $table->string('status')->default('Menunggu Kelulusan');
             $table->timestamps();
         });

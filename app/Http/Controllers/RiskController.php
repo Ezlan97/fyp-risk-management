@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Mail\MaklumatRisikoBaru;
 use App\Mail\KomenBaruSystemPengurusanRisiko;
 use Illuminate\Http\Request;
+use App\Mitigation;
+use App\Evaluation;
 use App\Comment;
 use App\User;
 use App\Risk;
@@ -21,14 +23,16 @@ class RiskController extends Controller
 
     public function operatorManage()
     {
-        $risks = Risk::Owner()->orderBy('updated_at', 'DESC')->get();
+        $risks = Risk::Owner()->orderBy('updated_at', 'DESC')->get();        
 
         return view('risks.operator.index', compact('risks'));
     }
 
     public function createPage()
     {
-        return view('risks.operator.create-page');
+        $clerks = User::clerk();
+
+        return view('risks.operator.create-page', compact('clerks'));
     }
 
     public function updatePage(Risk $risk)
@@ -50,27 +54,25 @@ class RiskController extends Controller
                 'manageability' =>  'required',
                 'dependencies' =>  'required',
                 'urgency' => 'required',
-                'proximities' => 'required'
+                'proximities' => 'required',
+                'mitigation' => 'required',
+                'dateline' => 'required',
+                'person_in_charge' => 'required'
             ]);
 
             if($request->action == 'save&submit')
             {                
-                $submit = new Risk();
+                $risk = new Risk();
             }
             else
             {
-                $submit = Risk::find($request->id);
+                $risk = Risk::find($request->id);
             }
-
-                $submit->title = $request->title;            
-                $submit->description = $request->description;            
-                $submit->cause_description = $request->cause_description;            
-                $submit->effect_description = $request->effect_description;            
-                $submit->occurrence = $request->occurrence;            
-                $submit->manageability = $request->manageability;            
-                $submit->dependencies = $request->dependencies;            
-                $submit->urgency = $request->urgency;                
-                $submit->proximities = $request->proximities;                
+                // new risk
+                $risk->title = $request->title;            
+                $risk->description = $request->description;            
+                $risk->cause_description = $request->cause_description;            
+                $risk->effect_description = $request->effect_description;                                           
                 if ($request->hasFile('file')) {
                     // Get filename with the extension
                     $filenameWithExt = $request->file('file')->getClientOriginalName();
@@ -83,17 +85,36 @@ class RiskController extends Controller
                     // Upload Image
                     $path = $request->file('file')->storeAs('public/files',$fileNameToStore);
                     //initiate
-                    $submit->file = 'app\public\files\\' . $fileNameToStore;
+                    $risk->file = 'app\public\files\\' . $fileNameToStore;
                 }
-                $submit->user_id = Auth::user()->id;
-                $submit->status = 'Menunggu Kelulusan';
-                $submit->save();
+                $risk->user_id = Auth::user()->id;
+                $risk->status = 'Menunggu Kelulusan';
+                $risk->save();
 
+                // new evaluation
+                $evaluation = new Evaluation();
+                $evaluation->occurrence = $request->occurrence;
+                $evaluation->manageability = $request->manageability;
+                $evaluation->dependencies = $request->dependencies;
+                $evaluation->urgency = $request->urgency;
+                $evaluation->proximities = $request->proximities;
+                $evaluation->risk_id = $risk->id;
+                $evaluation->save();
+
+                // new mitigation
+                $mitigation = new Mitigation();
+                $mitigation->mitigation = $request->mitigation;
+                $mitigation->dateline = $request->dateline;
+                $mitigation->user_id = $request->person_in_charge;
+                $mitigation->risk_id = $risk->id;
+                $mitigation->save();
+
+                // send email
                 $details = [
                     'title' => 'Maklumat Risiko Baru',
                     'body' => 'Risiko baru telah dikesan oleh operator, sila log masuk dan semak.',
-                    'tajuk' => $submit->title,
-                    'penerangan' => $submit->description,
+                    'tajuk' => $risk->title,
+                    'penerangan' => $risk->description,
                     'oleh' => Auth::user()->name
                 ];
 
@@ -108,7 +129,7 @@ class RiskController extends Controller
         {            
             if($request->action == 'save&draft')
             {                
-                $submit = new Risk();
+                $risk = new Risk();
             }
             else
             {
@@ -116,45 +137,25 @@ class RiskController extends Controller
                     'id' => 'required'
                 ]);
                 
-                $submit = Risk::find($request->id);
+                $risk = Risk::find($request->id);
             }
 
             if($request->has('title'))
             {
-                $submit->title = $request->title;
+                $risk->title = $request->title;
             }
             if($request->has('description'))
             {
-                $submit->description = $request->description;
+                $risk->description = $request->description;
             }
             if($request->has('cause_description'))
             {
-                $submit->cause_description = $request->cause_description;
+                $risk->cause_description = $request->cause_description;
             }
             if($request->has('effect_description'))
             {
-                $submit->effect_description = $request->effect_description;
+                $risk->effect_description = $request->effect_description;
             }
-            if($request->has('occurrence'))
-            {
-                $submit->occurrence = $request->occurrence;
-            }
-            if($request->has('manageability'))
-            {
-                $submit->manageability = $request->manageability;
-            }
-            if($request->has('dependencies'))
-            {
-                $submit->dependencies = $request->dependencies;
-            }
-            if($request->has('urgency'))
-            {
-                $submit->urgency = $request->urgency;
-            } 
-            if($request->has('proximities'))
-            {
-                $submit->proximities = $request->proximities;
-            }                
             if ($request->hasFile('file')) {
                 // Get filename with the extension
                 $filenameWithExt = $request->file('file')->getClientOriginalName();
@@ -167,11 +168,55 @@ class RiskController extends Controller
                 // Upload Image
                 $path = $request->file('file')->storeAs('public/files',$fileNameToStore);
                 //initiate
-                $submit->file = 'app\public\files\\' . $fileNameToStore;
+                $risk->file = 'app\public\files\\' . $fileNameToStore;
             }
-            $submit->user_id = Auth::user()->id;
-            $submit->status = 'Draf';
-            $submit->save();
+            $risk->user_id = Auth::user()->id;
+            $risk->status = 'Draf';
+            $risk->save();
+
+            // update mitigation
+            $evaluation = $risk->evaluation->where('status', 'Sebelum')->first();
+            if($request->has('occurrence'))
+            {
+                $evaluation->occurrence = $request->occurrence;
+            }
+            if($request->has('manageability'))
+            {
+                $evaluation->manageability = $request->manageability;
+            }
+            if($request->has('dependencies'))
+            {
+                $evaluation->dependencies = $request->dependencies;
+            }
+            if($request->has('urgency'))
+            {
+                $evaluation->urgency = $request->urgency;
+            } 
+            if($request->has('proximities'))
+            {
+                $evaluation->proximities = $request->proximities;
+            }
+            if($request->has('status'))
+            {
+                $evaluation->status = $request->status;
+            }
+            $evaluation->save();
+
+            // update mitigation
+            $mitigation = $risk->mitigation->first();
+            if($request->has('urgency'))
+            {
+                $mitigation->mitigation = $request->mitigation;
+            } 
+            if($request->has('dateline'))
+            {
+                $mitigation->dateline = $request->dateline;
+            }
+            if($request->has('person_in_charge'))
+            {
+                $mitigation->user_id = $request->person_in_charge;
+            }
+            $mitigation->save();
 
             return redirect()->route('operator.manage.risk')->with('success', 'Draf risiko telah dikemaskini.');
         }

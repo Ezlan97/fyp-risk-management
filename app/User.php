@@ -97,4 +97,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Risk');
     }
+
+    public function inCharge()
+    {
+        return $this->hasOne('App\Mitigation');
+    }
 }

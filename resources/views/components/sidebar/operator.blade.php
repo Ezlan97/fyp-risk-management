@@ -28,14 +28,14 @@
     <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Heading -->
-    <div class="sidebar-heading mt-3">
-      Risiko
+    <div class="sidebar-heading">
+      Pembantu Tadbir
     </div>
 
     <!-- Manage Penerima -->
     <li class="nav-item {{ Route::current()->getName() == 'operator.manage.risk' ? 'active' : '' }}"">
       <a class="nav-link" href="{{ route('operator.manage.clerk') }}">
-        <i class="fas fa-exclamation-circle"></i>
+        <i class="fas fa-users"></i>
         <span>Urus Pembantu Tadbir</span></a>
     </li>
 
