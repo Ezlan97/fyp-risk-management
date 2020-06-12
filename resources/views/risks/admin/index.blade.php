@@ -186,27 +186,27 @@
                                             <p>Kekerapan berlakunya risiko ini</p>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '5' ? 'checked="true"' : '' }}>Selalu
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->occurrence == '5' ? 'checked="true"' : '' }}>Selalu
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '4' ? 'checked="true"' : '' }}>Berkemungkinan
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->occurrence == '4' ? 'checked="true"' : '' }}>Berkemungkinan
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '3' ? 'checked="true"' : '' }}>Jarang
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->occurrence == '3' ? 'checked="true"' : '' }}>Jarang
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '2' ? 'checked="true"' : '' }}>Sangat Jarang
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->occurrence == '2' ? 'checked="true"' : '' }}>Sangat Jarang
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->occurrence == '1' ? 'checked="true"' : '' }}>Bergantung
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->occurrence == '1' ? 'checked="true"' : '' }}>Bergantung
                                                 </label>
                                             </div>
                                         </div>
@@ -216,27 +216,27 @@
                                             <p>Seberapa mudah untuk risiko itu ditangani</p>           
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '5' ? 'checked="true"' : '' }}>Sangat Mudah
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->manageability == '5' ? 'checked="true"' : '' }}>Sangat Mudah
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '4' ? 'checked="true"' : '' }}>Mudah
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->manageability == '4' ? 'checked="true"' : '' }}>Mudah
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '3' ? 'checked="true"' : '' }}>Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->manageability == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '2' ? 'checked="true"' : '' }}>Susah
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->manageability == '2' ? 'checked="true"' : '' }}>Susah
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->manageability == '1' ? 'checked="true"' : '' }}>Sangat Susah
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->manageability == '1' ? 'checked="true"' : '' }}>Sangat Susah
                                                 </label>
                                             </div> 
                                         </div>
@@ -246,57 +246,57 @@
                                             <p>Adakah ia akan mengikuti atau mencetuskan peristiwa lain</p>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '5' ? 'checked="true"' : '' }}>Sangat Tinggi
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->dependencies == '5' ? 'checked="true"' : '' }}>Sangat Tinggi
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '4' ? 'checked="true"' : '' }}>Tinggi
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->dependencies == '4' ? 'checked="true"' : '' }}>Tinggi
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '3' ? 'checked="true"' : '' }}>Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->dependencies == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '2' ? 'checked="true"' : '' }}>Sedikit
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->dependencies == '2' ? 'checked="true"' : '' }}>Sedikit
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->dependencies == '1' ? 'checked="true"' : '' }}>Tiada
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->dependencies == '1' ? 'checked="true"' : '' }}>Tiada
                                                 </label>
                                             </div> 
                                         </div>
                                         <hr>
                                         <div class="form-group text-center">
-                                            <p class="font-weight-bold">Keselamatan Pekerja</p>
-                                            <p>Tahap keselamatan pekerja ketika risiko berlaku</p>           
+                                            <p class="font-weight-bold">Keselamatan Pihak Terlibat</p>
+                                            <p>Tahap keselamatan pihak terlibat ketika risiko berlaku</p>           
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '5' ? 'checked="true"' : '' }}>Sangat Merbahaya
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->proximities == '5' ? 'checked="true"' : '' }}>Sangat Merbahaya
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '4' ? 'checked="true"' : '' }}>Berbahaya
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->proximities == '4' ? 'checked="true"' : '' }}>Berbahaya
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '3' ? 'checked="true"' : '' }}>Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->proximities == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '2' ? 'checked="true"' : '' }}>Sedikit
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->proximities == '2' ? 'checked="true"' : '' }}>Sedikit
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->proximities == '1' ? 'checked="true"' : '' }}>Tiada
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->proximities == '1' ? 'checked="true"' : '' }}>Tiada
                                                 </label>
                                             </div>
                                         </div>
@@ -306,27 +306,27 @@
                                             <p>Berapa cepat perlu risiko ini perlu ditangani</p>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '5' ? 'checked="true"' : '' }}>Segera
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->urgency == '5' ? 'checked="true"' : '' }}>Segera
                                                 </label>
                                             </div>
                                             <div class="form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '4' ? 'checked="true"' : '' }}>Secepat Mungkin
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->urgency == '4' ? 'checked="true"' : '' }}>Secepat Mungkin
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '3' ? 'checked="true"' : '' }}>Sederhana
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->urgency == '3' ? 'checked="true"' : '' }}>Sederhana
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '2' ? 'checked="true"' : '' }}>Bila-bila masa
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->urgency == '2' ? 'checked="true"' : '' }}>Bila-bila masa
                                                 </label>
                                             </div>
                                             <div class="form-check-inline disabled">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" {{ $r->urgency == '1' ? 'checked="true"' : '' }}>Bila perlu
+                                                    <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->urgency == '1' ? 'checked="true"' : '' }}>Bila perlu
                                                 </label>
                                             </div>
                                         </div>

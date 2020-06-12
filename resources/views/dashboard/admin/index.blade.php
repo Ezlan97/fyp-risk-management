@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-
+    
     <!-- No of jabatan -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- No of operator -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-warning shadow h-100 py-2">
@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- No of Risk -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-danger shadow h-100 py-2">
@@ -58,7 +58,80 @@
             </div>
         </div>
     </div>
-
+    
 </div>
+
+
+<div class="row">    
+    <!-- Card Body -->
+    <div class="card-body">
+        
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Carta Risiko</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Sangat Rendah</th>
+                                <th>Rendah</th>
+                                <th>Sedarhana</th>
+                                <th>Tinggi</th>
+                                <th>Sangat Tinggi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Sangat Tinggi</th>
+                                <td bgcolor="yellow"></td>
+                                <td bgcolor="yellow"></td>
+                                <td bgcolor="red"></td>
+                                <td bgcolor="red"></td>
+                                <td bgcolor="red"></td>
+                            </tr>
+                            <tr>
+                                <th>Tinggi</th>
+                                <td bgcolor="green"></td>
+                                <td bgcolor="yellow"></td>
+                                <td bgcolor="yellow"></td>
+                                <td bgcolor="red"></td>
+                                <td bgcolor="red"></td>
+                            </tr>
+                            <tr>
+                                <th>Sederhana</th>
+                                <td bgcolor="green"></td>
+                                <td bgcolor="yellow"></td>
+                                <td bgcolor="yellow"></td>
+                                <td bgcolor="red"></td>
+                                <td bgcolor="red"></td>
+                            </tr>
+                            <tr>
+                                <th>Rendah</th>
+                                <td bgcolor="green"></td>
+                                <td bgcolor="green"></td>
+                                <td bgcolor="yellow"></td>
+                                <td bgcolor="yellow"></td>
+                                <td bgcolor="red"></td>
+                            </tr>
+                            <tr>
+                                <th>Sangat Rendah</th>
+                                <td bgcolor="green"></td>
+                                <td bgcolor="green"></td>
+                                <td bgcolor="green"></td>
+                                <td bgcolor="green"></td>
+                                <td bgcolor="yellow"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
 
 @endsection

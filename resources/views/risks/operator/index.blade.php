@@ -269,8 +269,8 @@
                                                 </div>
                                                 <hr>
                                                 <div class="form-group text-center">
-                                                    <p class="font-weight-bold">Keselamatan Pekerja</p>
-                                                    <p>Tahap keselamatan pekerja ketika risiko berlaku</p>           
+                                                    <p class="font-weight-bold">Keselamatan Pihak Terlibat</p>
+                                                    <p>Tahap keselamatan pihak terlibat ketika risiko berlaku</p>           
                                                     <div class="form-check-inline">
                                                         <label class="form-check-label">
                                                             <input type="radio" class="form-check-input" {{ $r->evaluation->where('state', 'Sebelum')->first()->proximities == '5' ? 'checked="true"' : '' }}>Sangat Merbahaya
