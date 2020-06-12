@@ -86,43 +86,143 @@
                         <tbody>
                             <tr>
                                 <th>Sangat Tinggi</th>
-                                <td bgcolor="yellow"></td>
-                                <td bgcolor="yellow"></td>
-                                <td bgcolor="red"></td>
-                                <td bgcolor="red"></td>
-                                <td bgcolor="red"></td>
+                                <td class="text-center" bgcolor="yellow">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="yellow">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="red">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="red">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="red">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Tinggi</th>
-                                <td bgcolor="green"></td>
-                                <td bgcolor="yellow"></td>
-                                <td bgcolor="yellow"></td>
-                                <td bgcolor="red"></td>
-                                <td bgcolor="red"></td>
+                                <td class="text-center" bgcolor="green">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="yellow">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="yellow">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="red">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="red">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Sederhana</th>
-                                <td bgcolor="green"></td>
-                                <td bgcolor="yellow"></td>
-                                <td bgcolor="yellow"></td>
-                                <td bgcolor="red"></td>
-                                <td bgcolor="red"></td>
+                                <td class="text-center" bgcolor="green">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="yellow">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="yellow">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="red">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="red">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Rendah</th>
-                                <td bgcolor="green"></td>
-                                <td bgcolor="green"></td>
-                                <td bgcolor="yellow"></td>
-                                <td bgcolor="yellow"></td>
-                                <td bgcolor="red"></td>
+                                <td class="text-center" bgcolor="green">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="green">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="yellow">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="yellow">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="red">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Sangat Rendah</th>
-                                <td bgcolor="green"></td>
-                                <td bgcolor="green"></td>
-                                <td bgcolor="green"></td>
-                                <td bgcolor="green"></td>
-                                <td bgcolor="yellow"></td>
+                                <td class="text-center" bgcolor="green">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="green">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="green">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="green">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
+                                <td class="text-center" bgcolor="yellow">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Lihat
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -133,5 +233,424 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection

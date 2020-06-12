@@ -15,9 +15,8 @@ class DashboardController extends Controller
         $risks = Risk::all();
         $departments = Department::all()->count();
         $operators = User::operator()->count();
-        $evaluations = Evaluation::where('State', 'Sebelum')->get();
 
-        return view('dashboard.admin.index', compact('risks', 'departments', 'operators', 'evaluations'));
+        return view('dashboard.admin.index', compact('risks', 'departments', 'operators'));
     }
 
     public function operatorDashboard()

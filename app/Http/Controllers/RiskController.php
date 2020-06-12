@@ -180,7 +180,14 @@ class RiskController extends Controller
             $risk->save();
 
             // update evaluation
-            $evaluation = $risk->evaluation->where('state', 'Sebelum')->first();
+            if($request->action == 'save&draft')
+            {                
+                $evaluation = new Evaluation();
+            }
+            else
+            {
+                $evaluation = $risk->evaluation->where('state', 'Sebelum')->first();                
+            }
             if($request->has('occurrence'))
             {
                 $evaluation->occurrence = $request->occurrence;
@@ -208,7 +215,14 @@ class RiskController extends Controller
             $evaluation->save();
 
             // update mitigation
-            $mitigation = $risk->mitigation->first();
+            if($request->action == 'save&draft')
+            {                
+                $mitigation = new Mitigation();
+            }
+            else
+            {
+                $mitigation = $risk->mitigation->first();
+            }
             if($request->has('urgency'))
             {
                 $mitigation->mitigation = $request->mitigation;
