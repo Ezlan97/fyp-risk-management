@@ -87,27 +87,27 @@
                             <tr>
                                 <th>Sangat Kerap</th>
                                 <td class="text-center bg-warning">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal5,1-4">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-warning">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal5,5-8">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-danger">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal5,9-12">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-danger">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal5,13-16">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-danger">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal5,17-20">
                                         Lihat
                                     </button>
                                 </td>
@@ -115,27 +115,27 @@
                             <tr>
                                 <th>Kerap</th>
                                 <td class="text-center bg-success">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal4,1-4">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-warning">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal4,5-8">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-warning">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal4,9-12">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-danger">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal4,13-16">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-danger">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal4,17-20">
                                         Lihat
                                     </button>
                                 </td>
@@ -143,27 +143,27 @@
                             <tr>
                                 <th>Kadang-kadang</th>
                                 <td class="text-center bg-success">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal3,1-5">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-warning">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal3,6-8">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-warning">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal3,9-12">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-danger">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal3,13-16">
                                         Lihat
                                     </button>
                                 </td>
                                 <td class="text-center bg-danger">
-                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal3,17-20">
                                         Lihat
                                     </button>
                                 </td>
