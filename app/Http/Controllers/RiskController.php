@@ -101,6 +101,7 @@ class RiskController extends Controller
                 $evaluation->urgency = $request->urgency;
                 $evaluation->proximities = $request->proximities;
                 $evaluation->risk_id = $risk->id;
+                $evaluation->position = ($request->manageability + $request->dependencies + $request->urgency + $request->proximities) . "," . $request->occurrence;
                 $evaluation->save();
 
                 // new mitigation
@@ -173,10 +174,7 @@ class RiskController extends Controller
                 $risk->file = 'app\public\files\\' . $fileNameToStore;
             }
             $risk->user_id = Auth::user()->id;
-            if($risk->status == 'Lulus & Sedang Di Urus' || $risk->status == 'Draf')
-            {
-                $risk->status = 'Draf';
-            }            
+            $risk->status = 'Draf';           
             $risk->save();
 
             // update evaluation
@@ -208,10 +206,11 @@ class RiskController extends Controller
             {
                 $evaluation->proximities = $request->proximities;
             }
-            if($request->has('status'))
+            if($request->has('occurrence') && $request->has('manageability') && $request->has('dependencies') && $request->has('urgency') && $request->has('proximities'))
             {
-                $evaluation->status = $request->status;
+                $evaluation->position = ($request->manageability + $request->dependencies + $request->urgency + $request->proximities) . "," . $request->occurrence;
             }
+            $evaluation->risk_id = $risk->id;
             $evaluation->save();
 
             // update mitigation
@@ -235,6 +234,7 @@ class RiskController extends Controller
             {
                 $mitigation->user_id = $request->person_in_charge;
             }
+            $mitigation->risk_id = $risk->id;
             $mitigation->save();
 
             return redirect()->route('operator.manage.risk')->with('success', 'Draf risiko telah dikemaskini.');

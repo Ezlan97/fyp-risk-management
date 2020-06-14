@@ -17,6 +17,7 @@ Route::group(['middleware' => ['guest']], function () {
     //only guests can access these routes
     Route::get('/', 'AuthController@loginPage')->name('guest.login.page');
     Route::post('/login', 'AuthController@login')->name('guest.login');
+    Route::get('/test', 'DashboardController@test')->name('test');
 });
 
 Route::group(['middleware' => ['auth']], function () {

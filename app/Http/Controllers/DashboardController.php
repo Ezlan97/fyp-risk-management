@@ -23,4 +23,9 @@ class DashboardController extends Controller
     {
         return view('dashboard.operator.index');
     }
+
+    public function test()
+    {
+        return view('test');
+    }
 }

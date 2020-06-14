@@ -22,6 +22,7 @@ class CreateEvaluationsTable extends Migration
             $table->string('dependencies')->nullable();
             $table->string('proximities')->nullable();
             $table->string('urgency')->nullable();
+            $table->string('position')->nullable();
             $table->timestamps();
         });
     }
