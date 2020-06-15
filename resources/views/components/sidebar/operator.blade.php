@@ -33,7 +33,7 @@
     </div>
 
     <!-- Manage Penerima -->
-    <li class="nav-item {{ Route::current()->getName() == 'operator.manage.risk' ? 'active' : '' }}"">
+    <li class="nav-item {{ Route::current()->getName() == 'operator.manage.clerk' ? 'active' : '' }}"">
       <a class="nav-link" href="{{ route('operator.manage.clerk') }}">
         <i class="fas fa-users"></i>
         <span>Urus Pembantu Tadbir</span></a>
