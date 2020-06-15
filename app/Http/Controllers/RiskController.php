@@ -62,6 +62,7 @@ class RiskController extends Controller
                 'person_in_charge' => 'required'
             ]);
 
+
             if($request->action == 'save&submit')
             {                
                 $risk = new Risk();
@@ -94,18 +95,33 @@ class RiskController extends Controller
                 $risk->save();
 
                 // new evaluation
-                $evaluation = new Evaluation();
+                if($request->action == 'save&submit')
+                {                
+                    $evaluation = new Evaluation();
+                }
+                else
+                {
+                    $evaluation = Evaluation::find($request->id);
+                }
                 $evaluation->occurrence = $request->occurrence;
                 $evaluation->manageability = $request->manageability;
                 $evaluation->dependencies = $request->dependencies;
                 $evaluation->urgency = $request->urgency;
                 $evaluation->proximities = $request->proximities;
                 $evaluation->risk_id = $risk->id;
-                $evaluation->position = ($request->manageability + $request->dependencies + $request->urgency + $request->proximities) . "," . $request->occurrence;
+                $evaluation->x = ($request->manageability + $request->dependencies + $request->urgency + $request->proximities);
+                $evaluation->y = $request->occurrence;
                 $evaluation->save();
 
                 // new mitigation
-                $mitigation = new Mitigation();
+                if($request->action == 'save&submit')
+                {                
+                    $mitigation = new Mitigation();
+                }
+                else
+                {
+                    $mitigation = Mitigation::find($request->id);
+                }
                 $mitigation->mitigation = $request->mitigation;
                 $mitigation->dateline = $request->dateline;
                 $mitigation->user_id = $request->person_in_charge;
@@ -208,7 +224,8 @@ class RiskController extends Controller
             }
             if($request->has('occurrence') && $request->has('manageability') && $request->has('dependencies') && $request->has('urgency') && $request->has('proximities'))
             {
-                $evaluation->position = ($request->manageability + $request->dependencies + $request->urgency + $request->proximities) . "," . $request->occurrence;
+                $evaluation->x = ($request->manageability + $request->dependencies + $request->urgency + $request->proximities);
+                $evaluation->y = $request->occurrence;
             }
             $evaluation->risk_id = $risk->id;
             $evaluation->save();
