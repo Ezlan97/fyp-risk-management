@@ -234,15 +234,15 @@
             <div class="card-footer text-center">
                 <button type="submit" name="action" value="update$draft" class="d-sm-inline-block btn btn-sm btn-warning shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
-                        <i class="fas fa-plus fa-sm text-white"></i>
+                        <i class="fas fa-archive fa-sm text-white"></i>
                     </span>
-                    <span class="text">Kemaskini</span>                                
+                    <span class="text">Kemaskini & Draf</span>                                
                 </button>
                 <button type="submit" name="action" value="update&submit" class="d-sm-inline-block btn btn-sm btn-success shadow-sm btn-icon-split" data-toggle="tooltip" data-placement="top" title="Simpan Risiko">
                     <span class="icon text-white">
-                        <i class="fas fa-plus fa-sm text-white"></i>
+                        <i class="fas fa-paper-plane fa-sm text-white"></i>
                     </span>
-                    <span class="text">Hantar</span>                                
+                    <span class="text">Simpan & Hantar</span>                                
                 </button>
             </div>
         </form>

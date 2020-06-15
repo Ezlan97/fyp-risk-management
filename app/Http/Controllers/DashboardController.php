@@ -12,7 +12,7 @@ class DashboardController extends Controller
 {
     public function adminDashboard()
     {
-        $risks = Risk::all();
+        $risks = Risk::where('status', 'Lulus & Sedang Di Urus')->get();
         $departments = Department::all()->count();
         $operators = User::operator()->count();
 

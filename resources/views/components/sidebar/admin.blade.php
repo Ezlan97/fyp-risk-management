@@ -70,6 +70,10 @@
                     Menunggu Kelulusan 
                     {{-- <span class="badge badge-warning">1</span> --}}
                 </a>
+                <a class="collapse-item" href="{{ route('admin.manage.risk', 'Perlu Pembaikan') }}">
+                    Perlu Pembaikan 
+                    {{-- <span class="badge badge-primary">3</span> --}}
+                </a>
                 <a class="collapse-item" href="{{ route('admin.manage.risk', 'Lulus & Sedang Di Urus') }}">
                     Lulus & Sedang Di Urus 
                     {{-- <span class="badge badge-primary">3</span> --}}
