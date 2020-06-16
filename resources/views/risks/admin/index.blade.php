@@ -361,7 +361,6 @@
                                         {{-- Risk Status --}}
                                         <div class="form-group">
                                             <select id="inputStatus" class="form-control" name="status" required>                                          
-                                                <option {{ old('state') == 'Menunggu Kelulusan' ? 'selected' : '' }} value="Menunggu Kelulusan">Menunggu Kelulusan</option>
                                                 <option {{ old('state') == 'Perlu Pembaikan' ? 'selected' : '' }} value="Perlu Pembaikan">Perlu Pembaikan</option>
                                                 <option {{ old('state') == 'Lulus & Sedang Di Urus' ? 'selected' : '' }} value="Lulus & Sedang Di Urus">Lulus & Sedang Di Urus</option>
                                                 <option {{ old('state') == 'Lulus & Sedang Di Urus' ? 'selected' : '' }} value="Lulus & Sedang Di Urus">Selesai & Dipantau</option>
