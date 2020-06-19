@@ -32,6 +32,11 @@ class RiskController extends Controller
     {
         $clerks = User::clerk();
 
+        if($clerks->count() == 0)
+        {
+            return redirect()->back()->with('danger', 'Sila tambah pembantu tadbir sebelum daftar risiko didalam sistem!');
+        }
+
         return view('risks.operator.create-page', compact('clerks'));
     }
 

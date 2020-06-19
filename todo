@@ -2,5 +2,7 @@ Risk management
 1. comment function for both admin and operator [Done]
 2. email for every comment send [Done]
 3. Log for every action
-4. Statistic calculation
-5. Statistic Visualization
+4. Statistic calculation [Done]
+5. Statistic Visualization [Done]
+6. Operator setting
+7. Pembantu Tadbir Dashboard (Might need it or not?)

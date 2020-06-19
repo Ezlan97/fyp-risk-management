@@ -51,7 +51,7 @@
                         
                         {{-- Name --}}
                         <div class="form-group">
-                            <label for="inputName" class="sr-only">Name Operator</label>
+                            <label for="inputName" class="sr-only">Name</label>
                             <input type="text" name="name" class="form-control" placeholder="Name Operator" value="{{ $c->name }}" required autofocus>
                         </div>
                         
@@ -103,8 +103,8 @@
                     
                     {{-- Name --}}
                     <div class="form-group">
-                        <label for="inputName" class="sr-only">Name Operator</label>
-                        <input type="text" name="name" class="form-control" placeholder="Name Operator" value="{{ old('name') }}" required autofocus>
+                        <label for="inputName" class="sr-only">Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name') }}" required autofocus>
                     </div>
                     
                     {{-- Email --}}

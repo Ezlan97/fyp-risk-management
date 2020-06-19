@@ -11,12 +11,13 @@ Use App\User;
 class DashboardController extends Controller
 {
     public function adminDashboard()
-    {
+    {        
         $risks = Risk::where('status', 'Lulus & Sedang Di Urus')->get();
+        $evaluations = Evaluation::where('state', 'Sebelum')->get();
         $departments = Department::all()->count();
         $operators = User::operator()->count();
 
-        return view('dashboard.admin.index', compact('risks', 'departments', 'operators'));
+        return view('dashboard.admin.index', compact('risks', 'departments', 'operators', 'evaluations'));
     }
 
     public function operatorDashboard()
