@@ -18,7 +18,7 @@
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $departments }}</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-people-arrows fa-2x text-gray-300"></i>
+                        <i class="fas fa-building fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
