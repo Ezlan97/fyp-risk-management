@@ -33,6 +33,8 @@
         </div>
         @endif
 
+        <h1 class="text-center">System Pengurusan Risiko</h1>
+        <br>
         <a href="/"><img href=""><img class="mb-4" src="{{ asset('images/logo.png') }}" alt="" width="160" height="190"></a>
         <h1 class="h3 mb-3 font-weight-normal">Log Masuk</h1>
         
